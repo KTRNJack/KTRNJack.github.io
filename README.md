@@ -27,4 +27,6 @@ python3 -m http.server 8792
 
 ## 部署
 
-計畫放 GitHub Pages（免費、push 即部署），之後買自訂網域再綁定，零重工。
+- **線上網址**：https://ktrnjack.github.io/
+- repo：`KTRNJack/KTRNJack.github.io`（GitHub Pages user site，push main 即自動部署）
+- 之後買自訂網域直接綁定，零重工。
