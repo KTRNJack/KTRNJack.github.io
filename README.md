@@ -2,15 +2,17 @@
 
 求職導向的個人網站。純 HTML/CSS + 無相依小 JS，無框架、無建置流程。
 
-## 設計方向
+## 設計方向（v2，2026-07-10 改版）
 
-**編輯部誌面 × systemd 狀態列。** 核心賣點是「這些個人專案不是 demo，
-是持續運營中的系統」——所以每個 case study 掛一條 `systemctl status` 風格
-的等寬狀態列，內文用技術雜誌的編排（問題 → 架構 → 決策 → 規模）。
+**深夜控制室 × acid lime。** 兩層賣點：內容上「個人專案是持續運營中的系統」
+（每個 case study 掛 `systemctl status` 風格狀態列）；形式上**網站本身就是
+前端作品**——所有動效純 CSS/vanilla JS、零依賴。
 
-- 色：紙白 `#f7f4ee`、墨 `#191714`、單一橘 accent `#e8590c`、systemd 綠點 `#1f7a4d`
+- 色：近黑 `#0c0d11`、米白 `#eceada`、acid lime `#c8f31d`、running 綠 `#3ddc84`
 - 字：Noto Serif TC（標題 900）、Noto Sans TC（內文）、IBM Plex Mono（狀態列/標籤）
-- 質地：淡橫線稿紙背景、highlight 底帶強調、捲動漸顯
+- 動效：自訂游標（dot＋lerp 拖尾環）、捲動進度條、活的 career uptime 秒錶、
+  斜角無限跑馬燈、卡片 3D tilt＋滑鼠追蹤光暈、hero 逐行升起、描邊大字章節號、
+  conic-gradient 光暈背景＋網格；全部尊重 `prefers-reduced-motion`
 
 ## 結構（單頁）
 

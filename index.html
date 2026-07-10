@@ -3,61 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jack Sun — 工程師・系統與 AI 自動化</title>
-  <meta name="description" content="Jack Sun，工程師。四年 civic-tech 後端經驗，業餘運營一整套自建 AI 基礎設施：AI 生活夥伴、台股決策研究平台、軟硬體整合監控。" />
+  <title>Jack Sun — 前端工程師 × AI 系統</title>
+  <meta name="description" content="Jack Sun，前端工程師（Vue／Nuxt／JavaScript），四年 civic-tech 經驗。業餘指揮 AI agent 蓋起並運營一整套個人 AI 基礎設施。" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f7f4ee'/%3E%3Crect x='6' y='14' width='20' height='4' fill='%23e8590c'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c0d11'/%3E%3Crect x='6' y='14' width='20' height='4' fill='%23c8f31d'/%3E%3C/svg%3E" />
 </head>
 <body>
 
+  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
+  <div class="cursor" aria-hidden="true"><i id="curDot"></i><i id="curRing"></i></div>
+  <div class="bg" aria-hidden="true"><i class="bg__blob"></i><i class="bg__grid"></i></div>
+
   <!-- ═══ NAV ═══ -->
   <header class="nav">
-    <a class="nav__brand" href="#top">JACK&nbsp;SUN<span class="nav__cursor">▌</span></a>
+    <a class="nav__brand mono" href="#top">JACK&nbsp;SUN<span class="nav__cursor">▌</span></a>
     <nav class="nav__links" aria-label="主選單">
       <a href="#work">經歷</a>
       <a href="#systems">個人系統</a>
       <a href="#breadth">更多</a>
       <a href="#skills">技能</a>
-      <a href="#contact" class="nav__cta">聯絡</a>
+      <a href="#contact" class="nav__cta mono">CONTACT ↗</a>
     </nav>
   </header>
 
   <!-- ═══ HERO ═══ -->
   <section class="hero" id="top">
-    <p class="hero__status mono reveal">
-      <span class="dot" aria-hidden="true"></span>jack-sun.service — active (running)　·　6 subsystems online
+    <p class="hero__status mono">
+      <span class="dot" aria-hidden="true"></span>jack-sun.service — active (running)
+      <span class="hero__uptime">career uptime <b id="uptime">…</b></span>
     </p>
-    <h1 class="reveal">我把日常，<br>交給<em>自己寫的系統</em>。</h1>
-    <p class="hero__sub reveal">
-      Jack Sun — 工程師。四年 civic-tech 後端經驗，
-      業餘時間在一台 Linux 主機上運營整套個人 AI 基礎設施：
-      會記帳的 AI 夥伴、每天自己做決策的台股研究平台、
-      從韌體到儀表板的監控鏈。這個網站介紹它們怎麼被設計出來。
+    <h1>
+      <span class="hero__line"><i>我把日常，</i></span>
+      <span class="hero__line"><i>交給<em>自己寫的系統</em>。</i></span>
+    </h1>
+    <p class="hero__sub">
+      Jack Sun — <b>前端工程師</b>（Vue／Nuxt／JavaScript），四年 civic-tech 經驗。
+      業餘做一件更有趣的事：<b>指揮 AI agent</b> 蓋起並運營一整套跨語言的個人 AI 基礎設施
+      ——會記帳的 AI 夥伴、每天自己做決策的台股研究平台、從韌體到儀表板的監控鏈。
     </p>
-    <div class="hero__tags mono reveal">
-      <span>Python</span><span>Linux / systemd</span><span>LLM Orchestration</span><span>Telegram / Slack Bot</span><span>Data Pipeline</span>
-    </div>
+    <a class="hero__cta mono" href="#systems">SCROLL — 看系統怎麼跑 ↓</a>
   </section>
+
+  <!-- ═══ MARQUEE ═══ -->
+  <div class="marq" aria-hidden="true">
+    <div class="marq__track mono">
+      <span>VUE ✦ NUXT ✦ JAVASCRIPT ✦ AI-ORCHESTRATED DEV ✦ LINUX / SYSTEMD ✦ LLM AGENTS ✦ TELEGRAM BOT ✦ DATA PIPELINE ✦ NO-FRAMEWORK CSS ✦&nbsp;</span>
+      <span>VUE ✦ NUXT ✦ JAVASCRIPT ✦ AI-ORCHESTRATED DEV ✦ LINUX / SYSTEMD ✦ LLM AGENTS ✦ TELEGRAM BOT ✦ DATA PIPELINE ✦ NO-FRAMEWORK CSS ✦&nbsp;</span>
+    </div>
+  </div>
 
   <!-- ═══ WORK ═══ -->
   <section class="sec" id="work">
     <header class="sec__head reveal">
-      <span class="sec__no mono">§1</span>
+      <span class="sec__no mono" data-n="01">01</span>
       <h2>工作經歷</h2>
     </header>
 
     <article class="job reveal">
       <div class="job__meta mono">
-        <span class="job__period">2022 —— 現在</span>
-        <span class="job__len">4 yrs</span>
+        <span class="job__period">2022 —— NOW</span>
+        <span class="job__len">4 YRS</span>
       </div>
       <div class="job__body">
-        <h3>沃草有限公司 <span class="job__title">工程師</span></h3>
+        <h3>沃草有限公司 <span class="job__title">前端工程師</span></h3>
         <p class="job__desc">
           台灣 civic-tech 組織，以工程手段讓公共事務更容易被公民參與。
         </p>
@@ -70,19 +83,20 @@
     </article>
   </section>
 
-  <!-- ═══ PERSONAL SYSTEMS (case studies) ═══ -->
+  <!-- ═══ PERSONAL SYSTEMS ═══ -->
   <section class="sec" id="systems">
     <header class="sec__head reveal">
-      <span class="sec__no mono">§2</span>
+      <span class="sec__no mono" data-n="02">02</span>
       <h2>個人系統</h2>
       <p class="sec__lede">
-        不是 side project 的截圖，而是<b>持續運行中的系統</b>——
-        每一個都有排程、狀態、和失敗時會叫的告警。以下按架構決策寫成 case study。
+        不是 side project 的截圖，而是<b>持續運行中的系統</b>——每一個都有排程、狀態、和失敗時會叫的告警。
+        更有趣的是：我是前端工程師，這些後端全是我<b>指揮 AI agent 寫的</b>；
+        我負責架構決策、驗收與維運。以下寫成 case study。
       </p>
     </header>
 
     <!-- Hermes -->
-    <article class="cs reveal">
+    <article class="cs reveal tilt">
       <p class="cs__unit mono"><span class="ok">●</span> hermes-gateway.service — active (running)</p>
       <div class="cs__grid">
         <div class="cs__no mono">01</div>
@@ -96,7 +110,7 @@
             並設計了受控的自我更新閉環——它可以在人審核的前提下改自己的設定。
           </p>
           <ul class="cs__facts mono">
-            <li>Python · Telegram Bot API · LLM provider 抽象層</li>
+            <li>Telegram Bot API · LLM provider 抽象層 · AI 協作開發</li>
             <li>Obsidian 檔案型記憶金庫 · skill 插件系統</li>
             <li>systemd 常駐 · 每日實際使用中</li>
           </ul>
@@ -105,7 +119,7 @@
     </article>
 
     <!-- stock-monitor -->
-    <article class="cs reveal">
+    <article class="cs reveal tilt">
       <p class="cs__unit mono"><span class="ok">●</span> stock-monitor.timer — active (waiting) · 每交易日 13:35</p>
       <div class="cs__grid">
         <div class="cs__no mono">02</div>
@@ -119,7 +133,7 @@
             ——包含一次用回測數據否決掉一個看起來很聰明的策略。
           </p>
           <ul class="cs__facts mono">
-            <li>Python · 行情 API · cron 排程 · Streamlit 儀表板</li>
+            <li>行情 API · cron 排程 · Streamlit 儀表板 · AI 協作開發</li>
             <li>多帳戶 AI trader · 回測驗證 · 每日決策通知</li>
             <li>研究用途 · 決策全程留痕可稽核</li>
           </ul>
@@ -128,7 +142,7 @@
     </article>
 
     <!-- esp32 -->
-    <article class="cs reveal">
+    <article class="cs reveal tilt">
       <p class="cs__unit mono"><span class="ok">●</span> mobile-status-page.service — active (running) · :8504</p>
       <div class="cs__grid">
         <div class="cs__no mono">03</div>
@@ -141,14 +155,14 @@
             規模不大，但完整走過「韌體 → 後端 → 前端」的垂直整合。
           </p>
           <ul class="cs__facts mono">
-            <li>ESP32 · Python 狀態伺服器 · 行動版頁面</li>
+            <li>ESP32 · 狀態伺服器 · 行動版頁面 · AI 協作開發</li>
           </ul>
         </div>
       </div>
     </article>
 
     <!-- multi-agent -->
-    <article class="cs reveal">
+    <article class="cs reveal tilt">
       <p class="cs__unit mono"><span class="ok">●</span> fusion-panel.service — active (running) · :8503</p>
       <div class="cs__grid">
         <div class="cs__no mono">04</div>
@@ -161,7 +175,7 @@
             任何一家模型換掉，辯論照常進行。
           </p>
           <ul class="cs__facts mono">
-            <li>Python · 多 LLM provider · 回合制編排 · Web 面板</li>
+            <li>多 LLM provider · 回合制編排 · Web 面板 · AI 協作開發</li>
           </ul>
         </div>
       </div>
@@ -171,7 +185,7 @@
   <!-- ═══ BREADTH ═══ -->
   <section class="sec" id="breadth">
     <header class="sec__head reveal">
-      <span class="sec__no mono">§3</span>
+      <span class="sec__no mono" data-n="03">03</span>
       <h2>還在跑的其他東西</h2>
     </header>
     <ul class="etc reveal">
@@ -186,47 +200,49 @@
   <!-- ═══ SKILLS ═══ -->
   <section class="sec" id="skills">
     <header class="sec__head reveal">
-      <span class="sec__no mono">§4</span>
+      <span class="sec__no mono" data-n="04">04</span>
       <h2>技能</h2>
     </header>
     <div class="skills reveal">
       <div class="skills__row">
-        <h3 class="mono">語言與核心</h3>
-        <p>Python（主力）、Shell script、SQL、HTML/CSS（輕量無框架取向）</p>
+        <h3 class="mono">前端（主力）</h3>
+        <p>Vue、Nuxt、JavaScript（ES6+）、HTML/CSS、響應式版面、無框架手刻（本站即是：0 依賴、純 CSS 動效）</p>
+      </div>
+      <div class="skills__row">
+        <h3 class="mono">AI 協作開發</h3>
+        <p>以 LLM agent 進行跨語言開發與維運——本站列出的後端系統皆以此模式建成；多 agent 編排、prompt／skill 系統設計、檔案型長期記憶架構</p>
       </div>
       <div class="skills__row">
         <h3 class="mono">系統與部署</h3>
         <p>Linux（原生環境日常使用）、systemd 服務化、cron 排程設計、自架服務維運、Git</p>
       </div>
       <div class="skills__row">
-        <h3 class="mono">AI 工程</h3>
-        <p>LLM API 整合與 provider 抽象、多 agent 編排、prompt／skill 系統設計、檔案型長期記憶架構、本地模型部署</p>
-      </div>
-      <div class="skills__row">
-        <h3 class="mono">資料</h3>
-        <p>爬蟲與公開資料管線、API 介接、資料清理與告警設計</p>
+        <h3 class="mono">資料與自動化</h3>
+        <p>公開資料管線、API 介接、瀏覽器自動化、告警設計</p>
       </div>
     </div>
   </section>
 
   <!-- ═══ CONTACT ═══ -->
   <section class="contact" id="contact">
-    <h2 class="reveal">聯絡</h2>
-    <p class="contact__lede reveal">開放後端／系統／AI 工程相關機會。</p>
+    <p class="contact__marq mono" aria-hidden="true">GET IN TOUCH ✦ GET IN TOUCH ✦ GET IN TOUCH ✦</p>
+    <h2 class="reveal">與我聯繫</h2>
+    <p class="contact__lede reveal">開放前端／AI 應用／系統整合相關機會。</p>
     <div class="contact__rows reveal">
       <a class="contact__row" href="mailto:a0972120468@gmail.com">
-        <span class="mono contact__k">email</span>
-        <span class="contact__v">a0972120468@gmail.com</span>
+        <span class="mono contact__k">EMAIL</span>
+        <span class="contact__v mono">a0972120468@gmail.com</span>
+        <span class="contact__arrow" aria-hidden="true">↗</span>
       </a>
       <div class="contact__row contact__row--static">
-        <span class="mono contact__k">phone</span>
+        <span class="mono contact__k">PHONE</span>
         <span class="contact__v contact__v--muted">面談時提供</span>
       </div>
     </div>
   </section>
 
   <footer class="foot mono">
-    <p>hand-built · no framework · <span id="year"></span></p>
+    <p>hand-built · zero dependencies · pure css motion · <span id="year"></span></p>
   </footer>
 
   <script src="js/main.js"></script>
