@@ -177,6 +177,8 @@ em{font-style:normal}
 .contact__row:hover{background:var(--paper-2);padding-left:1rem}
 .contact__k{font-size:.78rem;color:var(--accent);letter-spacing:.1em}
 .contact__v{font-family:var(--mono);font-size:1.02rem;word-break:break-all}
+.contact__row--static:hover{background:none;padding-left:.4rem;cursor:default}
+.contact__v--muted{color:var(--ink-2);font-family:var(--sans);font-size:.95rem}
 
 /* ══ FOOTER ═══════════════════════════════════════════ */
 .foot{
