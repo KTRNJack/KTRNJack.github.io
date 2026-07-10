@@ -18,13 +18,6 @@ Hero（狀態列＋一句定位）→ §1 工作經歷 → §2 個人系統（4 
 Hermes / Stock Monitor / ESP32 / Fusion Panel）→ §3 其他運行中專案 →
 §4 技能 → 聯絡（email＋電話）。
 
-## 本機預覽
-
-```bash
-python3 -m http.server 8792
-# http://localhost:8792/
-```
-
 ## 部署
 
 - **線上網址**：https://ktrnjack.github.io/

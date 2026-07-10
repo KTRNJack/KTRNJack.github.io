@@ -30,7 +30,7 @@
 
 ## 完成後
 
-1. 本機預覽驗證：`python3 -m http.server 8792` 看排版沒破。
+1. 瀏覽器直接開 `index.html` 確認排版沒破（純靜態，不用起 server）。
 2. commit + push 到 origin（GitHub Pages 會自動更新）。
 3. 把這個檔案裡「唯一任務」段落刪除或標記完成。
 
