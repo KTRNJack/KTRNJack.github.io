@@ -4,9 +4,14 @@
 
 ## 目前狀態（2026-07-10）
 
-v1 完成並部署 GitHub Pages。單頁、純 HTML/CSS、四個 case study，
-全區塊實測截圖驗證過（桌機＋手機）。
-剩餘工作只有一項：§1 沃草工作經歷內容——**由 Mac 上的 Claude 補**，見 `TODO.md`。
+v2 完成（深色 acid lime 版），**網站已依 Jack 指示暫時下線**：
+repo `KTRNJack/KTRNJack.github.io` 轉私有 → Pages 自動失效（https://ktrnjack.github.io/ 回 404）。
+（註：user-site 命名的 repo 不能直接關 Pages，轉私有是唯一下線方式。）
+
+**重新上線**：`gh repo edit KTRNJack/KTRNJack.github.io --visibility public --accept-visibility-change-consequences`
+之後 Pages 會自動恢復（可能需要幾分鐘或推一個空 commit 觸發 build）。
+
+剩餘工作：§1 沃草工作經歷內容——**由 Mac 上的 Claude 補**，見 `TODO.md`（repo 私有不影響 SSH clone）。
 
 ## 已拍板的決策（2026-07-10 與 Jack 確認）
 
