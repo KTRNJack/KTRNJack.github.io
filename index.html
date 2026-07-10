@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jack — 工程師・系統與 AI 自動化</title>
+  <meta name="description" content="Jack，工程師。四年 civic-tech 後端經驗，業餘運營一整套自建 AI 基礎設施：AI 生活夥伴、台股決策研究平台、軟硬體整合監控。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f7f4ee'/%3E%3Crect x='6' y='14' width='20' height='4' fill='%23e8590c'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav">
+    <a class="nav__brand" href="#top">JACK<span class="nav__cursor">▌</span></a>
+    <nav class="nav__links" aria-label="主選單">
+      <a href="#work">經歷</a>
+      <a href="#systems">個人系統</a>
+      <a href="#breadth">更多</a>
+      <a href="#skills">技能</a>
+      <a href="#contact" class="nav__cta">聯絡</a>
+    </nav>
+  </header>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="top">
+    <p class="hero__status mono reveal">
+      <span class="dot" aria-hidden="true"></span>jack.systems — active (running)　·　six services online
+    </p>
+    <h1 class="reveal">我把日常，<br>交給<em>自己寫的系統</em>。</h1>
+    <p class="hero__sub reveal">
+      Jack — 工程師。四年 civic-tech 後端經驗，
+      業餘時間在一台 Linux 主機上運營整套個人 AI 基礎設施：
+      會記帳的 AI 夥伴、每天自己做決策的台股研究平台、
+      從韌體到儀表板的監控鏈。這個網站介紹它們怎麼被設計出來。
+    </p>
+    <div class="hero__tags mono reveal">
+      <span>Python</span><span>Linux / systemd</span><span>LLM Orchestration</span><span>Telegram / Slack Bot</span><span>Data Pipeline</span>
+    </div>
+  </section>
+
+  <!-- ═══ WORK ═══ -->
+  <section class="sec" id="work">
+    <header class="sec__head reveal">
+      <span class="sec__no mono">§1</span>
+      <h2>工作經歷</h2>
+    </header>
+
+    <article class="job reveal">
+      <div class="job__meta mono">
+        <span class="job__period">2022 —— 現在</span>
+        <span class="job__len">4 yrs</span>
+      </div>
+      <div class="job__body">
+        <h3>沃草有限公司 <span class="job__title">工程師</span></h3>
+        <p class="job__desc">
+          台灣 civic-tech 組織，以工程手段讓公共事務更容易被公民參與。
+        </p>
+        <!-- TODO(Jack): 從 Mac 補上實際負責的系統與專案，2–4 條 bullet，
+             每條格式建議「做了什麼 → 用什麼技術 → 帶來什麼結果」 -->
+        <ul class="job__points">
+          <li class="todo">主要負責系統與專案內容待補（由本人補充）</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- ═══ PERSONAL SYSTEMS (case studies) ═══ -->
+  <section class="sec" id="systems">
+    <header class="sec__head reveal">
+      <span class="sec__no mono">§2</span>
+      <h2>個人系統</h2>
+      <p class="sec__lede">
+        不是 side project 的截圖，而是<b>持續運行中的系統</b>——
+        每一個都有排程、狀態、和失敗時會叫的告警。以下按架構決策寫成 case study。
+      </p>
+    </header>
+
+    <!-- Hermes -->
+    <article class="cs reveal">
+      <p class="cs__unit mono"><span class="ok">●</span> hermes-gateway.service — active (running)</p>
+      <div class="cs__grid">
+        <div class="cs__no mono">01</div>
+        <div class="cs__body">
+          <h3>Hermes — 有長期記憶的 AI 生活夥伴</h3>
+          <p class="cs__problem"><b>問題：</b>市面上的 AI 助理沒有跨對話的長期記憶，也不能自己長出新能力。</p>
+          <p>
+            自建 Telegram gateway，後端接大型語言模型 API，可多 profile 併行（生活／科技評估各一套人格與工具）。
+            記憶層落在 Obsidian 知識庫：對話摘要、帳務、財務快照全部結構化寫檔，
+            重開機、換模型都不失憶。skill 系統讓它能載入新工具（查核、產圖、行程），
+            並設計了受控的自我更新閉環——它可以在人審核的前提下改自己的設定。
+          </p>
+          <ul class="cs__facts mono">
+            <li>Python · Telegram Bot API · LLM provider 抽象層</li>
+            <li>Obsidian 檔案型記憶金庫 · skill 插件系統</li>
+            <li>systemd 常駐 · 每日實際使用中</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- stock-monitor -->
+    <article class="cs reveal">
+      <p class="cs__unit mono"><span class="ok">●</span> stock-monitor.timer — active (waiting) · 每交易日 13:35</p>
+      <div class="cs__grid">
+        <div class="cs__no mono">02</div>
+        <div class="cs__body">
+          <h3>Stock Monitor — 台股 AI 決策研究平台</h3>
+          <p class="cs__problem"><b>問題：</b>LLM 到底能不能做交易決策？口說無憑，讓多個 AI 帳戶每天真的下判斷、然後被記分。</p>
+          <p>
+            每個交易日排程自動抓行情與財報基本面，餵給多個獨立 AI 交易帳戶
+            （含 K 線專用模型與通用 LLM）各自做出買賣決策，寫入資料庫並推播摘要。
+            決策會進入評估迴圈：定期回測、淨值互相 PK、表現差的策略被機制性淘汰
+            ——包含一次用回測數據否決掉一個看起來很聰明的策略。
+          </p>
+          <ul class="cs__facts mono">
+            <li>Python · 行情 API · cron 排程 · Streamlit 儀表板</li>
+            <li>多帳戶 AI trader · 回測驗證 · 每日決策通知</li>
+            <li>研究用途 · 決策全程留痕可稽核</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- esp32 -->
+    <article class="cs reveal">
+      <p class="cs__unit mono"><span class="ok">●</span> mobile-status-page.service — active (running) · :8504</p>
+      <div class="cs__grid">
+        <div class="cs__no mono">03</div>
+        <div class="cs__body">
+          <h3>ESP32 Usage Monitor — 從韌體到儀表板</h3>
+          <p class="cs__problem"><b>問題：</b>AI 服務的用量與額度散在各處，想在桌上一顆小硬體和手機上隨時看到。</p>
+          <p>
+            ESP32 硬體端顯示即時用量，主機端跑狀態伺服器供手機瀏覽，
+            資料鏈從 API 抓取、彙整到雙端呈現一手包辦。
+            規模不大，但完整走過「韌體 → 後端 → 前端」的垂直整合。
+          </p>
+          <ul class="cs__facts mono">
+            <li>ESP32 · Python 狀態伺服器 · 行動版頁面</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <!-- multi-agent -->
+    <article class="cs reveal">
+      <p class="cs__unit mono"><span class="ok">●</span> fusion-panel.service — active (running) · :8503</p>
+      <div class="cs__grid">
+        <div class="cs__no mono">04</div>
+        <div class="cs__body">
+          <h3>Fusion Panel — 多模型辯論協調器</h3>
+          <p class="cs__problem"><b>問題：</b>單一模型的答案有盲點，重要決策想聽多個模型互相挑戰後的結論。</p>
+          <p>
+            用 CLI 召集多家模型（Google、OpenAI 系、開源模型）對同一命題輪流立論與反駁，
+            最後由協調者整合成單一結論。重點在 provider 抽象與回合制編排——
+            任何一家模型換掉，辯論照常進行。
+          </p>
+          <ul class="cs__facts mono">
+            <li>Python · 多 LLM provider · 回合制編排 · Web 面板</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- ═══ BREADTH ═══ -->
+  <section class="sec" id="breadth">
+    <header class="sec__head reveal">
+      <span class="sec__no mono">§3</span>
+      <h2>還在跑的其他東西</h2>
+    </header>
+    <ul class="etc reveal">
+      <li><span class="mono etc__k">weather-monitor</span>氣象署公開資料管線：每日天氣摘要與地震、豪雨、颱風告警推播，含去重與嚴重度分級。</li>
+      <li><span class="mono etc__k">social-reader</span>IG／Threads 貼文讀取管線：瀏覽器 CDP 自動化，摘要後歸檔到知識庫。</li>
+      <li><span class="mono etc__k">second-brain</span>Obsidian 第二大腦：所有系統的記憶層，AI 可讀寫的結構化筆記，含自動路由與快照。</li>
+      <li><span class="mono etc__k">infra</span>整機 systemd user services 化：六個常駐服務一鍵啟停、開機自愈、健康告警。</li>
+      <li><span class="mono etc__k">model-audit</span>LLM 行為研究：系統性測試中國語言模型的內容審查邊界，產出詞彙級報告。</li>
+    </ul>
+  </section>
+
+  <!-- ═══ SKILLS ═══ -->
+  <section class="sec" id="skills">
+    <header class="sec__head reveal">
+      <span class="sec__no mono">§4</span>
+      <h2>技能</h2>
+    </header>
+    <div class="skills reveal">
+      <div class="skills__row">
+        <h3 class="mono">語言與核心</h3>
+        <p>Python（主力）、Shell script、SQL、HTML/CSS（輕量無框架取向）</p>
+      </div>
+      <div class="skills__row">
+        <h3 class="mono">系統與部署</h3>
+        <p>Linux（原生環境日常使用）、systemd 服務化、cron 排程設計、自架服務維運、Git</p>
+      </div>
+      <div class="skills__row">
+        <h3 class="mono">AI 工程</h3>
+        <p>LLM API 整合與 provider 抽象、多 agent 編排、prompt／skill 系統設計、檔案型長期記憶架構、本地模型部署</p>
+      </div>
+      <div class="skills__row">
+        <h3 class="mono">資料</h3>
+        <p>爬蟲與公開資料管線、API 介接、資料清理與告警設計</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CONTACT ═══ -->
+  <section class="contact" id="contact">
+    <h2 class="reveal">聯絡</h2>
+    <p class="contact__lede reveal">開放後端／系統／AI 工程相關機會。</p>
+    <div class="contact__rows reveal">
+      <a class="contact__row" href="mailto:a0972120468@gmail.com">
+        <span class="mono contact__k">email</span>
+        <span class="contact__v">a0972120468@gmail.com</span>
+      </a>
+      <a class="contact__row" href="tel:0972120468">
+        <span class="mono contact__k">phone</span>
+        <span class="contact__v">0972-120-468</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="foot mono">
+    <p>hand-built · no framework · <span id="year"></span></p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
