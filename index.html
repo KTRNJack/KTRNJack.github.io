@@ -43,7 +43,7 @@
       <nav class="nav-links" aria-label="履歷導覽">
         <a href="#impact">核心成果</a>
         <a href="#experience">工作經歷</a>
-        <a href="#projects">個人專案</a>
+        <a href="#projects">AI 實作</a>
         <a href="#skills">技能</a>
       </nav>
       <a class="header-contact" href="mailto:a0972120468@gmail.com">Email me</a>
@@ -86,7 +86,7 @@
             <li>
               <span class="map-year">2026</span>
               <strong>API + AI tooling</strong>
-              <small>Node 24 · Prisma · MCP</small>
+              <small>Node 24 · Local AI · MCP</small>
             </li>
           </ol>
         </div>
@@ -233,9 +233,9 @@
     <section class="projects" id="projects" aria-labelledby="projects-title">
       <div class="shell">
         <header class="section-heading section-heading-light reveal">
-          <p class="section-kicker">03 / PERSONAL PROJECTS</p>
-          <h2 id="projects-title">Mac 上的個人工程實作</h2>
-          <p>與任職公司成果分開呈現。Windows 上的 AI server 專案將由後續版本補充。</p>
+          <p class="section-kicker">03 / AI SYSTEMS &amp; PERSONAL PROJECTS</p>
+          <h2 id="projects-title">Windows／WSL 上的 AI 系統實作</h2>
+          <p>從本機模型、即時翻譯、視覺自動化，到具安全邊界的 AI 決策與工具分發。以下只列已由程式碼、測試或實機流程確認的成果。</p>
         </header>
 
         <div class="project-list">
@@ -243,12 +243,12 @@
             <div class="project-order">01</div>
             <div class="project-main">
               <div class="project-heading">
-                <h3>Codex ↔ Claude Local Bridge</h3>
-                <span class="verification"><i aria-hidden="true"></i>76／76 測試通過</span>
+                <h3>本機 AI 執行環境與安全備援</h3>
+                <span class="verification"><i aria-hidden="true"></i>WSL 文字 Runtime 已驗證</span>
               </div>
-              <p class="project-purpose">本機雙代理討論與實作審查工具。</p>
-              <p>使用 Node.js 22、MCP 與隔離 tmux sessions，支援持久化 transcript、人工決策後續跑、程序復原與精確版本收斂；以 scope snapshot、路徑驗證及私有 runtime 權限限制資料邊界。</p>
-              <p class="project-stack">Node.js · MCP · tmux · State machine · E2E</p>
+              <p class="project-purpose">在消費級 Windows／WSL 工作站整合可控的文字模型與圖片工作流。</p>
+              <p>整合 llama.cpp、Ollama 與 ComfyUI，管理 Qwen 27B、Gemma 31B 與 Qwen-Image；建立單一啟動入口、模型互斥、GPU／RAM 資源監控，以及停用工具權限的本機對話備援，避免未驗證模型取得操作能力。</p>
+              <p class="project-stack">llama.cpp · Ollama · ComfyUI · Qwen · Windows／WSL</p>
             </div>
           </article>
 
@@ -257,11 +257,11 @@
             <div class="project-main">
               <div class="project-heading">
                 <h3>Realtime Translate</h3>
-                <span class="verification verification-source"><i aria-hidden="true"></i>程式碼已確認</span>
+                <span class="verification"><i aria-hidden="true"></i>端到端串流已驗證</span>
               </div>
-              <p class="project-purpose">macOS 系統音訊即時翻譯與置頂字幕。</p>
-              <p>以 Swift／ScreenCaptureKit 擷取 16 kHz mono 音訊，透過 Python async pipeline 串接 Gemini Live API，再以 PyObjC／AppKit 顯示即時原文、繁體中文譯文與歷史段落。</p>
-              <p class="project-stack">Swift · ScreenCaptureKit · Gemini Live · Python · AppKit</p>
+              <p class="project-purpose">把 Windows 系統音訊即時轉成英文原文與繁體中文字幕。</p>
+              <p>由 Windows WASAPI loopback 擷取記憶體中的 PCM 音訊，跨 WSL relay 送入 Python async pipeline 與 Gemini Live API，再由 WSLg 顯示置頂字幕；保留 macOS ScreenCaptureKit 路徑，且不在本機保存錄音。</p>
+              <p class="project-stack">Gemini Live · Python AsyncIO · WASAPI · WSLg · Swift</p>
             </div>
           </article>
 
@@ -269,12 +269,12 @@
             <div class="project-order">03</div>
             <div class="project-main">
               <div class="project-heading">
-                <h3>Local UI Test</h3>
-                <span class="verification verification-source"><i aria-hidden="true"></i>程式碼已確認</span>
+                <h3>Windows Vision Automation</h3>
+                <span class="verification"><i aria-hidden="true"></i>核心測試 40／40 通過</span>
               </div>
-              <p class="project-purpose">AI 工作流程用本機 UI 測試控制台。</p>
-              <p>以 Nuxt 3、Playwright 與 Vitest 執行 declarative test plan，支援人工操作交接、停止與失敗案例重試；只接受 loopback 目標，拒絕自動填寫登入資訊並遮蔽敏感診斷內容。</p>
-              <p class="project-stack">Nuxt 3 · Vue 3 · TypeScript · Playwright · Vitest</p>
+              <p class="project-purpose">可由 AI 編排、但由 Windows Runtime 強制安全邊界的視覺自動化平台。</p>
+              <p>以 .NET 8 實作視窗身分驗證、畫面擷取、色彩／幾何／模板／OCR 辨識與有限狀態 workflow；每次輸入前後都重新確認目標、前景與畫面狀態，並提供純唯讀 watch、離線校正及有動作預算的單一控制 session。</p>
+              <p class="project-stack">.NET 8 · Win32 · Windows.Media.Ocr · JSONL · Computer Vision</p>
             </div>
           </article>
 
@@ -282,12 +282,38 @@
             <div class="project-order">04</div>
             <div class="project-main">
               <div class="project-heading">
-                <h3>Android GPS 測試控制台</h3>
-                <span class="verification verification-source"><i aria-hidden="true"></i>程式碼已確認</span>
+                <h3>AI Paper Trading Research Platform</h3>
+                <span class="verification"><i aria-hidden="true"></i>Paper-only 邊界已驗證</span>
               </div>
-              <p class="project-purpose">免 root、免手機 APK 的 Mac Web 控制工具。</p>
-              <p>整合 Node.js、ADB、Android test provider 與本機 GraphHopper，支援定點、路線、搖桿、速度平滑與真實 GPS 還原；路線座標不送往外部 routing API。</p>
-              <p class="project-stack">Node.js · ADB · GraphHopper · OpenStreetMap</p>
+              <p class="project-purpose">以可回放證據、風控閘門與結果校準研究 AI 台股決策。</p>
+              <p>建立白名單市場資料收集、事件證據帳本、AI 決策、行情品質檢查、交易 guardrails 與 3／5／10／20 日 outcome review；所有訂單只存在 Paper 帳戶，系統沒有券商登入或真實下單路徑。</p>
+              <p class="project-stack">Python · Codex · Kronos · Streamlit · Pytest</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-order">05</div>
+            <div class="project-main">
+              <div class="project-heading">
+                <h3>Skill Hub MCP</h3>
+                <span class="verification"><i aria-hidden="true"></i>12／12 測試通過</span>
+              </div>
+              <p class="project-purpose">跨電腦集中發布、固定版本並回滾 AI Skills。</p>
+              <p>以 Node.js、TypeScript 與 Streamable HTTP MCP 建立版本化 Skill registry；每次執行固定 release 與 package hash，發布採完整驗證及原子切換，並提供 append-only 的非同步協作信箱。</p>
+              <p class="project-stack">Node.js 24 · TypeScript · MCP · Atomic release · Systemd</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-order">06</div>
+            <div class="project-main">
+              <div class="project-heading">
+                <h3>GitHub AI Radar</h3>
+                <span class="verification"><i aria-hidden="true"></i>每週排程已上線</span>
+              </div>
+              <p class="project-purpose">持續追蹤高關注 AI 開源專案，將發現與採用決策分離。</p>
+              <p>使用 GitHub 公開 API 產生熱門、使用訊號與前沿清單，再以受限候選集完成分析、差異追蹤與行動摘要；流程只提出升級候選，不會自動下載、執行或安裝第三方 repository。</p>
+              <p class="project-stack">Python · GitHub API · Obsidian · Telegram · Scheduled workflow</p>
             </div>
           </article>
         </div>
@@ -319,7 +345,7 @@
         </article>
         <article class="skill-row reveal">
           <h3>AI 協作整合</h3>
-          <p>LLM agent 工作流程設計、MCP、Gemini Live API、多代理協作、跨語言專案驗收與維運</p>
+          <p>LLM agent 工作流程設計、MCP、Gemini Live API、本機模型部署、AI guardrails、評估校準、跨語言專案驗收與維運</p>
         </article>
       </div>
     </section>
