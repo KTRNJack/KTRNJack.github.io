@@ -1,250 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jack Sun — 前端工程師 × AI 系統</title>
-  <meta name="description" content="Jack Sun，前端工程師（Vue／Nuxt／JavaScript），四年 civic-tech 經驗。業餘指揮 AI agent 蓋起並運營一整套個人 AI 基礎設施。" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <link rel="stylesheet" href="css/style.css?v=3" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230c0d11'/%3E%3Crect x='6' y='14' width='20' height='4' fill='%23c8f31d'/%3E%3C/svg%3E" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#2156b5">
+  <title>Jack Sun｜前端工程師、平台現代化與 AI 協作開發</title>
+  <meta name="description" content="Jack Sun 的工程履歷：8 年以上 Web 開發經驗，專長 Vue、Nuxt、TypeScript、系統遷移、測試自動化與 AI 工具整合。">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Jack Sun｜工程履歷">
+  <meta property="og:description" content="前端主力，延伸至平台遷移、Node.js API、測試與 AI 工具整合。">
+  <meta property="og:url" content="https://ktrnjack.github.io/">
+  <link rel="canonical" href="https://ktrnjack.github.io/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500;600&amp;family=Chiron+Hei+HK:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=4">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%232156b5'/%3E%3Cpath d='M15 17h26v8H24v22h-9zM31 31h18v16H31z' fill='%23f5f0e3'/%3E%3Ccircle cx='48' cy='17' r='7' fill='%23ef6a3a'/%3E%3C/svg%3E">
+  <script>document.documentElement.classList.add('js')</script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Jack Sun",
+      "email": "mailto:a0972120468@gmail.com",
+      "jobTitle": "工程師",
+      "url": "https://ktrnjack.github.io/",
+      "knowsAbout": ["Vue", "Nuxt", "TypeScript", "Node.js", "Playwright", "MCP"]
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">跳到主要內容</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingProgress"></span></div>
 
-  <div class="progress" aria-hidden="true"><i id="progressBar"></i></div>
-  <div class="cursor" aria-hidden="true"><i id="curDot"></i><i id="curRing"></i></div>
-  <div class="bg" aria-hidden="true"><i class="bg__blob"></i><i class="bg__grid"></i></div>
-
-  <!-- ═══ NAV ═══ -->
-  <header class="nav">
-    <a class="nav__brand mono" href="#top">JACK&nbsp;SUN<span class="nav__cursor">▌</span></a>
-    <nav class="nav__links" aria-label="主選單">
-      <a href="#work">經歷</a>
-      <a href="#systems">個人系統</a>
-      <a href="#breadth">更多</a>
-      <a href="#skills">技能</a>
-      <a href="#contact" class="nav__cta mono">CONTACT<svg class="arr" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9L9 3M4.2 3H9v4.8"/></svg></a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="回到首頁">
+        <span class="brand-mark" aria-hidden="true">JS</span>
+        <span>Jack Sun</span>
+      </a>
+      <nav class="nav-links" aria-label="履歷導覽">
+        <a href="#impact">核心成果</a>
+        <a href="#experience">工作經歷</a>
+        <a href="#projects">個人專案</a>
+        <a href="#skills">技能</a>
+      </nav>
+      <a class="header-contact" href="mailto:a0972120468@gmail.com">Email me</a>
+    </div>
   </header>
 
-  <!-- ═══ HERO ═══ -->
-  <section class="hero" id="top">
-    <p class="hero__status mono">
-      <span class="dot" aria-hidden="true"></span>jack-sun.service — active (running)
-      <span class="hero__uptime">career uptime <b id="uptime">…</b></span>
-    </p>
-    <h1>
-      <span class="hero__line"><i>我把日常，</i></span>
-      <span class="hero__line"><i>交給<em>自己寫的系統</em>。</i></span>
-    </h1>
-    <p class="hero__sub">
-      Jack Sun — <b>前端工程師</b>（Vue／Nuxt／JavaScript），四年 civic-tech 經驗。
-      業餘做一件更有趣的事：<b>指揮 AI agent</b> 蓋起並運營一整套跨語言的個人 AI 基礎設施
-      ——會記帳的 AI 夥伴、每天自己做決策的台股研究平台、從韌體到儀表板的監控鏈。
-    </p>
-    <a class="hero__cta mono" href="#systems">SCROLL — 看系統怎麼跑<svg class="arr" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2v8M2.5 6.5L6 10l3.5-3.5"/></svg></a>
-  </section>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-grid shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">JACK SUN / FRONTEND-FIRST ENGINEER</p>
+          <h1>把既有系統，<br>往下一個世代搬。</h1>
+          <p class="hero-lede">
+            8 年以上 Web 開發經驗。以前端為主力，近年延伸至 Node.js API、測試自動化、雲端交付與 AI 工具整合；擅長在維持既有行為的同時，完成大型技術遷移。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#impact">查看工作成果</a>
+            <button class="button button-quiet" id="printResume" type="button">列印／存成 PDF</button>
+          </div>
+        </div>
 
-  <!-- ═══ MARQUEE ═══ -->
-  <div class="marq" aria-hidden="true">
-    <div class="marq__track mono">
-      <span>VUE ✦ NUXT ✦ JAVASCRIPT ✦ AI-ORCHESTRATED DEV ✦ LINUX / SYSTEMD ✦ LLM AGENTS ✦ TELEGRAM BOT ✦ DATA PIPELINE ✦ NO-FRAMEWORK CSS ✦&nbsp;</span>
-      <span>VUE ✦ NUXT ✦ JAVASCRIPT ✦ AI-ORCHESTRATED DEV ✦ LINUX / SYSTEMD ✦ LLM AGENTS ✦ TELEGRAM BOT ✦ DATA PIPELINE ✦ NO-FRAMEWORK CSS ✦&nbsp;</span>
+        <div class="migration-map reveal" role="img" aria-label="職涯技術路徑：從前端產品開發，走向平台現代化與 AI 工具整合">
+          <p class="map-label">CAREER MIGRATION PATH</p>
+          <ol>
+            <li>
+              <span class="map-year">2018</span>
+              <strong>Frontend</strong>
+              <small>React · Vue · RWD</small>
+            </li>
+            <li>
+              <span class="map-year">2021</span>
+              <strong>Product delivery</strong>
+              <small>Next.js · TypeScript · Testing</small>
+            </li>
+            <li>
+              <span class="map-year">2024</span>
+              <strong>Platform migration</strong>
+              <small>Nuxt 3 · Vue 3 · Pinia</small>
+            </li>
+            <li>
+              <span class="map-year">2026</span>
+              <strong>API + AI tooling</strong>
+              <small>Node 24 · Prisma · MCP</small>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro shell reveal" aria-labelledby="intro-title">
+      <p class="section-kicker">PROFILE</p>
+      <div class="intro-grid">
+        <h2 id="intro-title">前端出身，<br>現在處理的是整條交付鏈。</h2>
+        <div class="intro-copy">
+          <p>熟悉 Vue／Nuxt 與 React／Next.js，實際工作已涵蓋會員、內容、管理後台、募款金流、API、資料庫、CI/CD 與測試。</p>
+          <p>我的強項不是為了追新而重寫，而是先找出相容邊界，再把舊系統逐步搬到更可維護、更可測試的架構。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact" id="impact" aria-labelledby="impact-title">
+      <div class="shell">
+        <header class="section-heading reveal">
+          <p class="section-kicker">01 / SELECTED IMPACT</p>
+          <h2 id="impact-title">沃草：2021/12/21 至今</h2>
+          <p>正式職稱：工程師。以下成果來自本機 repositories、專案文件與 Git 歷史交叉整理。</p>
+        </header>
+
+        <div class="impact-list">
+          <article class="impact-item reveal">
+            <div class="impact-index">01</div>
+            <div>
+              <h3>重建公開內容平台</h3>
+              <p>作為 Datun Nuxt 3 重建的主要貢獻者，將 Nuxt 2／Vue 2 架構遷移至 Nuxt 3／Vue 3，導入 Pinia、composables、Firebase modular SDK 與 TypeScript。</p>
+              <p class="impact-scope">涵蓋會員、文章內容、互動專題、地圖、多語系與 SEO。</p>
+            </div>
+          </article>
+
+          <article class="impact-item reveal">
+            <div class="impact-index">02</div>
+            <div>
+              <h3>把回歸風險納入遷移流程</h3>
+              <p>建立與擴充 Vitest 單元測試及 Playwright E2E，納入核心頁面 smoke test、Firestore Emulator 整合測試與舊內容格式相容性驗證。</p>
+              <p class="impact-scope">測試不只是交付後補做，而是大型遷移的驗收邊界。</p>
+            </div>
+          </article>
+
+          <article class="impact-item reveal">
+            <div class="impact-index">03</div>
+            <div>
+              <h3>完成 Core API 現代化</h3>
+              <p>與團隊完成前台及後台仍在使用的 47 支 API 遷移，從 Node 10／JavaScript 升級至 Node 24／Express／TypeScript／Prisma。</p>
+              <p class="impact-scope">個人負責會員與 Persona、內容管理、訂單與 CSV 報表、圖片管理等路由及測試。</p>
+            </div>
+          </article>
+
+          <article class="impact-item reveal">
+            <div class="impact-index">04</div>
+            <div>
+              <h3>補上 API 防護與交付基礎</h3>
+              <p>加入參數化查詢、輸入驗證、rate limiting、Helmet、API 文件存取限制與登入／密碼重設節流；建立 Docker、Cloud Run、GitHub Actions 與 Secret Manager 流程。</p>
+              <p class="impact-scope">以相容既有 client contract 為前提逐步替換舊服務。</p>
+            </div>
+          </article>
+
+          <article class="impact-item reveal">
+            <div class="impact-index">05</div>
+            <div>
+              <h3>交付募款、內容與 AI 整合功能</h3>
+              <p>開發募款與捐款流程，串接 ECPay、商品 API、發票載具與愛心碼驗證；另完成圖片管理台、批次上傳、文章編輯器，以及 staging OAuth 保護型 MCP Resource Server。</p>
+              <p class="impact-scope">從使用者介面一路處理到 API、驗證與部署。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience shell" id="experience" aria-labelledby="experience-title">
+      <header class="section-heading reveal">
+        <p class="section-kicker">02 / EXPERIENCE</p>
+        <h2 id="experience-title">工作經歷</h2>
+      </header>
+
+      <div class="timeline">
+        <article class="role role-current reveal">
+          <div class="role-meta">
+            <time datetime="2021-12-21">2021/12/21</time>
+            <span>至今</span>
+          </div>
+          <div class="role-body">
+            <p class="role-company">沃草有限公司</p>
+            <h3>工程師</h3>
+            <p>公民科技內容平台、內部管理後台、會員、募款系統與 Core API 的開發及現代化。</p>
+            <ul class="tech-line" aria-label="使用技術">
+              <li>Vue 2/3</li><li>Nuxt 2/3</li><li>TypeScript</li><li>Node.js</li><li>Prisma</li><li>Playwright</li><li>GCP</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-meta"><time datetime="2021-07">2021/07</time><span>2021/12</span></div>
+          <div class="role-body">
+            <p class="role-company">數果網路股份有限公司（POPDAILY）</p>
+            <h3>前端工程師</h3>
+            <p>使用 Next.js 與 TypeScript 開發 Web／Mobile Web，串接 GraphQL；負責 AMP、Jest 測試、Tailwind CSS、styled-components 與 Mixpanel 整合。</p>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-meta"><time datetime="2020-06">2020/06</time><span>2021/07</span></div>
+          <div class="role-body">
+            <p class="role-company">緯創軟體股份有限公司（Acer 駐點）</p>
+            <h3>軟體開發工程師</h3>
+            <p>參與 PLANET9 平台開發，使用 React、SCSS、GraphQL／AJAX 建立頁面與模組，實作 i18n，並重構難以維護的既有程式。</p>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-meta"><time datetime="2019-01">2019/01</time><span>2020/05</span></div>
+          <div class="role-body">
+            <p class="role-company">捷思遊戲科技有限公司</p>
+            <h3>前端工程師</h3>
+            <p>使用 React、Redux 與 SCSS 開發會員權限、遊戲設定及營運報表後台；另完成 Excel 表格貼入網頁後自動轉換為系統資料格式的工具。</p>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-meta"><time datetime="2018-07">2018/07</time><span>2018/12</span></div>
+          <div class="role-body">
+            <p class="role-company">香港商富威香港發展有限公司台灣分公司</p>
+            <h3>前端工程師</h3>
+            <p>參與遊戲平台與管理後台開發，使用 Vue、React、TypeScript、SCSS 與 AJAX，負責桌面及行動版介面。</p>
+          </div>
+        </article>
+
+        <article class="role reveal">
+          <div class="role-meta"><time datetime="2015-07">2015/07</time><span>2016/11</span></div>
+          <div class="role-body">
+            <p class="role-company">傑飛特科技股份有限公司</p>
+            <h3>助理工程師／實習</h3>
+            <p>參與飯店與度假村網站開發，負責 HTML／CSS、jQuery、RWD、AJAX 與購物車資料連動。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <div class="shell">
+        <header class="section-heading section-heading-light reveal">
+          <p class="section-kicker">03 / PERSONAL PROJECTS</p>
+          <h2 id="projects-title">Mac 上的個人工程實作</h2>
+          <p>與任職公司成果分開呈現。Windows 上的 AI server 專案將由後續版本補充。</p>
+        </header>
+
+        <div class="project-list">
+          <article class="project reveal">
+            <div class="project-order">01</div>
+            <div class="project-main">
+              <div class="project-heading">
+                <h3>Codex ↔ Claude Local Bridge</h3>
+                <span class="verification"><i aria-hidden="true"></i>76／76 測試通過</span>
+              </div>
+              <p class="project-purpose">本機雙代理討論與實作審查工具。</p>
+              <p>使用 Node.js 22、MCP 與隔離 tmux sessions，支援持久化 transcript、人工決策後續跑、程序復原與精確版本收斂；以 scope snapshot、路徑驗證及私有 runtime 權限限制資料邊界。</p>
+              <p class="project-stack">Node.js · MCP · tmux · State machine · E2E</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-order">02</div>
+            <div class="project-main">
+              <div class="project-heading">
+                <h3>Realtime Translate</h3>
+                <span class="verification verification-source"><i aria-hidden="true"></i>程式碼已確認</span>
+              </div>
+              <p class="project-purpose">macOS 系統音訊即時翻譯與置頂字幕。</p>
+              <p>以 Swift／ScreenCaptureKit 擷取 16 kHz mono 音訊，透過 Python async pipeline 串接 Gemini Live API，再以 PyObjC／AppKit 顯示即時原文、繁體中文譯文與歷史段落。</p>
+              <p class="project-stack">Swift · ScreenCaptureKit · Gemini Live · Python · AppKit</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-order">03</div>
+            <div class="project-main">
+              <div class="project-heading">
+                <h3>Local UI Test</h3>
+                <span class="verification verification-source"><i aria-hidden="true"></i>程式碼已確認</span>
+              </div>
+              <p class="project-purpose">AI 工作流程用本機 UI 測試控制台。</p>
+              <p>以 Nuxt 3、Playwright 與 Vitest 執行 declarative test plan，支援人工操作交接、停止與失敗案例重試；只接受 loopback 目標，拒絕自動填寫登入資訊並遮蔽敏感診斷內容。</p>
+              <p class="project-stack">Nuxt 3 · Vue 3 · TypeScript · Playwright · Vitest</p>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-order">04</div>
+            <div class="project-main">
+              <div class="project-heading">
+                <h3>Android GPS 測試控制台</h3>
+                <span class="verification verification-source"><i aria-hidden="true"></i>程式碼已確認</span>
+              </div>
+              <p class="project-purpose">免 root、免手機 APK 的 Mac Web 控制工具。</p>
+              <p>整合 Node.js、ADB、Android test provider 與本機 GraphHopper，支援定點、路線、搖桿、速度平滑與真實 GPS 還原；路線座標不送往外部 routing API。</p>
+              <p class="project-stack">Node.js · ADB · GraphHopper · OpenStreetMap</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills shell" id="skills" aria-labelledby="skills-title">
+      <header class="section-heading reveal">
+        <p class="section-kicker">04 / CAPABILITIES</p>
+        <h2 id="skills-title">技術能力</h2>
+      </header>
+
+      <div class="skill-rows">
+        <article class="skill-row reveal">
+          <h3>前端主力</h3>
+          <p>Vue 2／3、Nuxt 2／3、React、Next.js、JavaScript、TypeScript、Pinia、Redux、HTML、CSS、SCSS、Tailwind CSS、styled-components、RWD</p>
+        </article>
+        <article class="skill-row reveal">
+          <h3>後端與資料</h3>
+          <p>Node.js、Express、REST API、GraphQL、Prisma、MariaDB／MySQL、Firebase／Firestore、JWT、OAuth、MCP</p>
+        </article>
+        <article class="skill-row reveal">
+          <h3>品質與測試</h3>
+          <p>Vitest、Jest、Mocha、Playwright、Vue Test Utils、Supertest、相容性驗證、E2E smoke tests</p>
+        </article>
+        <article class="skill-row reveal">
+          <h3>交付與平台</h3>
+          <p>Git、Docker、Google Cloud Run、Cloud Build、GitHub Actions、Secret Manager、PM2</p>
+        </article>
+        <article class="skill-row reveal">
+          <h3>AI 協作整合</h3>
+          <p>LLM agent 工作流程設計、MCP、Gemini Live API、多代理協作、跨語言專案驗收與維運</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="education shell reveal" aria-labelledby="education-title">
+      <p class="section-kicker">EDUCATION</p>
+      <div>
+        <h2 id="education-title">中國文化大學</h2>
+        <p>電機工程學系 學士｜2012/09 至 2017/07</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner shell reveal">
+        <p class="section-kicker">CONTACT</p>
+        <h2 id="contact-title">如果這些經驗符合你的團隊，<br>從一封 Email 開始。</h2>
+        <a href="mailto:a0972120468@gmail.com">a0972120468@gmail.com</a>
+        <p>電話與其他聯絡方式於面談時提供。</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>Jack Sun · Engineering résumé · <span id="currentYear">2026</span></p>
+      <a href="#top">回到頂端</a>
     </div>
-  </div>
-
-  <!-- ═══ WORK ═══ -->
-  <section class="sec" id="work">
-    <header class="sec__head reveal">
-      <span class="sec__no mono" data-n="01">01</span>
-      <h2>工作經歷</h2>
-    </header>
-
-    <article class="job reveal">
-      <div class="job__meta mono">
-        <span class="job__period">2022 —— NOW</span>
-        <span class="job__len">4 YRS</span>
-      </div>
-      <div class="job__body">
-        <h3>沃草有限公司 <span class="job__title">前端工程師</span></h3>
-        <p class="job__desc">
-          台灣 civic-tech 組織，以工程手段讓公共事務更容易被公民參與。
-        </p>
-        <!-- TODO(Jack): 從 Mac 補上實際負責的系統與專案，2–4 條 bullet，
-             每條格式建議「做了什麼 → 用什麼技術 → 帶來什麼結果」 -->
-        <ul class="job__points">
-          <li class="todo">主要負責系統與專案內容待補（由本人補充）</li>
-        </ul>
-      </div>
-    </article>
-  </section>
-
-  <!-- ═══ PERSONAL SYSTEMS ═══ -->
-  <section class="sec" id="systems">
-    <header class="sec__head reveal">
-      <span class="sec__no mono" data-n="02">02</span>
-      <h2>個人系統</h2>
-      <p class="sec__lede">
-        不是 side project 的截圖，而是<b>持續運行中的系統</b>——每一個都有排程、狀態、和失敗時會叫的告警。
-        更有趣的是：我是前端工程師，這些後端全是我<b>指揮 AI agent 寫的</b>；
-        我負責架構決策、驗收與維運。以下寫成 case study。
-      </p>
-    </header>
-
-    <!-- Hermes -->
-    <article class="cs reveal tilt">
-      <p class="cs__unit mono"><span class="ok">●</span> hermes-gateway.service — active (running)</p>
-      <div class="cs__grid">
-        <div class="cs__no mono">01</div>
-        <div class="cs__body">
-          <h3>Hermes — 有長期記憶的 AI 生活夥伴</h3>
-          <p class="cs__problem"><b>問題：</b>市面上的 AI 助理沒有跨對話的長期記憶，也不能自己長出新能力。</p>
-          <p>
-            自建 Telegram gateway，後端接大型語言模型 API，可多 profile 併行（生活／科技評估各一套人格與工具）。
-            記憶層落在 Obsidian 知識庫：對話摘要、帳務、財務快照全部結構化寫檔，
-            重開機、換模型都不失憶。skill 系統讓它能載入新工具（查核、產圖、行程），
-            並設計了受控的自我更新閉環——它可以在人審核的前提下改自己的設定。
-          </p>
-          <ul class="cs__facts mono">
-            <li>Telegram Bot API · LLM provider 抽象層 · AI 協作開發</li>
-            <li>Obsidian 檔案型記憶金庫 · skill 插件系統</li>
-            <li>systemd 常駐 · 每日實際使用中</li>
-          </ul>
-        </div>
-      </div>
-    </article>
-
-    <!-- stock-monitor -->
-    <article class="cs reveal tilt">
-      <p class="cs__unit mono"><span class="ok">●</span> stock-monitor.timer — active (waiting) · 每交易日 13:35</p>
-      <div class="cs__grid">
-        <div class="cs__no mono">02</div>
-        <div class="cs__body">
-          <h3>Stock Monitor — 台股 AI 決策研究平台</h3>
-          <p class="cs__problem"><b>問題：</b>LLM 到底能不能做交易決策？口說無憑，讓多個 AI 帳戶每天真的下判斷、然後被記分。</p>
-          <p>
-            每個交易日排程自動抓行情與財報基本面，餵給多個獨立 AI 交易帳戶
-            （含 K 線專用模型與通用 LLM）各自做出買賣決策，寫入資料庫並推播摘要。
-            決策會進入評估迴圈：定期回測、淨值互相 PK、表現差的策略被機制性淘汰
-            ——包含一次用回測數據否決掉一個看起來很聰明的策略。
-          </p>
-          <ul class="cs__facts mono">
-            <li>行情 API · cron 排程 · Streamlit 儀表板 · AI 協作開發</li>
-            <li>多帳戶 AI trader · 回測驗證 · 每日決策通知</li>
-            <li>研究用途 · 決策全程留痕可稽核</li>
-          </ul>
-        </div>
-      </div>
-    </article>
-
-    <!-- esp32 -->
-    <article class="cs reveal tilt">
-      <p class="cs__unit mono"><span class="ok">●</span> mobile-status-page.service — active (running) · :8504</p>
-      <div class="cs__grid">
-        <div class="cs__no mono">03</div>
-        <div class="cs__body">
-          <h3>ESP32 Usage Monitor — 從韌體到儀表板</h3>
-          <p class="cs__problem"><b>問題：</b>AI 服務的用量與額度散在各處，想在桌上一顆小硬體和手機上隨時看到。</p>
-          <p>
-            ESP32 硬體端顯示即時用量，主機端跑狀態伺服器供手機瀏覽，
-            資料鏈從 API 抓取、彙整到雙端呈現一手包辦。
-            規模不大，但完整走過「韌體 → 後端 → 前端」的垂直整合。
-          </p>
-          <ul class="cs__facts mono">
-            <li>ESP32 · 狀態伺服器 · 行動版頁面 · AI 協作開發</li>
-          </ul>
-        </div>
-      </div>
-    </article>
-
-    <!-- multi-agent -->
-    <article class="cs reveal tilt">
-      <p class="cs__unit mono"><span class="ok">●</span> fusion-panel.service — active (running) · :8503</p>
-      <div class="cs__grid">
-        <div class="cs__no mono">04</div>
-        <div class="cs__body">
-          <h3>Fusion Panel — 多模型辯論協調器</h3>
-          <p class="cs__problem"><b>問題：</b>單一模型的答案有盲點，重要決策想聽多個模型互相挑戰後的結論。</p>
-          <p>
-            用 CLI 召集多家模型（Google、OpenAI 系、開源模型）對同一命題輪流立論與反駁，
-            最後由協調者整合成單一結論。重點在 provider 抽象與回合制編排——
-            任何一家模型換掉，辯論照常進行。
-          </p>
-          <ul class="cs__facts mono">
-            <li>多 LLM provider · 回合制編排 · Web 面板 · AI 協作開發</li>
-          </ul>
-        </div>
-      </div>
-    </article>
-  </section>
-
-  <!-- ═══ BREADTH ═══ -->
-  <section class="sec" id="breadth">
-    <header class="sec__head reveal">
-      <span class="sec__no mono" data-n="03">03</span>
-      <h2>還在跑的其他東西</h2>
-    </header>
-    <ul class="etc reveal">
-      <li><span class="mono etc__k">weather-monitor</span>氣象署公開資料管線：每日天氣摘要與地震、豪雨、颱風告警推播，含去重與嚴重度分級。</li>
-      <li><span class="mono etc__k">social-reader</span>IG／Threads 貼文讀取管線：瀏覽器 CDP 自動化，摘要後歸檔到知識庫。</li>
-      <li><span class="mono etc__k">second-brain</span>Obsidian 第二大腦：所有系統的記憶層，AI 可讀寫的結構化筆記，含自動路由與快照。</li>
-      <li><span class="mono etc__k">infra</span>整機 systemd user services 化：六個常駐服務一鍵啟停、開機自愈、健康告警。</li>
-      <li><span class="mono etc__k">model-audit</span>LLM 行為研究：系統性測試中國語言模型的內容審查邊界，產出詞彙級報告。</li>
-    </ul>
-  </section>
-
-  <!-- ═══ SKILLS ═══ -->
-  <section class="sec" id="skills">
-    <header class="sec__head reveal">
-      <span class="sec__no mono" data-n="04">04</span>
-      <h2>技能</h2>
-    </header>
-    <div class="skills reveal">
-      <div class="skills__row">
-        <h3 class="mono">前端（主力）</h3>
-        <p>Vue、Nuxt、JavaScript（ES6+）、HTML/CSS、響應式版面、無框架手刻（本站即是：0 依賴、純 CSS 動效）</p>
-      </div>
-      <div class="skills__row">
-        <h3 class="mono">AI 協作開發</h3>
-        <p>以 LLM agent 進行跨語言開發與維運——本站列出的後端系統皆以此模式建成；多 agent 編排、prompt／skill 系統設計、檔案型長期記憶架構</p>
-      </div>
-      <div class="skills__row">
-        <h3 class="mono">系統與部署</h3>
-        <p>Linux（原生環境日常使用）、systemd 服務化、cron 排程設計、自架服務維運、Git</p>
-      </div>
-      <div class="skills__row">
-        <h3 class="mono">資料與自動化</h3>
-        <p>公開資料管線、API 介接、瀏覽器自動化、告警設計</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ CONTACT ═══ -->
-  <section class="contact" id="contact">
-    <p class="contact__marq mono" aria-hidden="true">GET IN TOUCH ✦ GET IN TOUCH ✦ GET IN TOUCH ✦</p>
-    <h2 class="reveal">與我聯繫</h2>
-    <p class="contact__lede reveal">開放前端／AI 應用／系統整合相關機會。</p>
-    <div class="contact__rows reveal">
-      <a class="contact__row" href="mailto:a0972120468@gmail.com">
-        <span class="mono contact__k">EMAIL</span>
-        <span class="contact__v mono">a0972120468@gmail.com</span>
-        <span class="contact__arrow" aria-hidden="true"><svg class="arr" viewBox="0 0 12 12" width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9L9 3M4.2 3H9v4.8"/></svg></span>
-      </a>
-      <div class="contact__row contact__row--static">
-        <span class="mono contact__k">PHONE</span>
-        <span class="contact__v contact__v--muted">面談時提供</span>
-      </div>
-    </div>
-  </section>
-
-  <footer class="foot mono">
-    <p>hand-built · zero dependencies · pure css motion · <span id="year"></span></p>
   </footer>
 
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=4" defer></script>
 </body>
 </html>

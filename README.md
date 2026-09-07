@@ -1,27 +1,24 @@
-# Jack — 個人履歷網站
+# Jack Sun 履歷網站
 
-求職導向的個人網站。純 HTML/CSS + 無相依小 JS，無框架、無建置流程。
+以 Git 與既有履歷證據整理的繁體中文個人履歷網站。內容以 2021/12/21 起的沃草工作成果為主，並收錄過往經歷及 Mac 上已檢查的個人專案。
 
-## 設計方向（v2，2026-07-10 改版）
+## 技術
 
-**深夜控制室 × acid lime。** 兩層賣點：內容上「個人專案是持續運營中的系統」
-（每個 case study 掛 `systemctl status` 風格狀態列）；形式上**網站本身就是
-前端作品**——所有動效純 CSS/vanilla JS、零依賴。
+- Semantic HTML
+- CSS Grid、CSS custom properties、OKLCH colors
+- Vanilla JavaScript
+- 無框架、無 build step、無 runtime dependency
 
-- 色：近黑 `#0c0d11`、米白 `#eceada`、acid lime `#c8f31d`、running 綠 `#3ddc84`
-- 字：Noto Serif TC（標題 900）、Noto Sans TC（內文）、IBM Plex Mono（狀態列/標籤）
-- 動效：自訂游標（dot＋lerp 拖尾環）、捲動進度條、活的 career uptime 秒錶、
-  斜角無限跑馬燈、卡片 3D tilt＋滑鼠追蹤光暈、hero 逐行升起、描邊大字章節號、
-  conic-gradient 光暈背景＋網格；全部尊重 `prefers-reduced-motion`
+## 本機預覽
 
-## 結構（單頁）
+```sh
+python3 -m http.server 8792 --bind 127.0.0.1
+```
 
-Hero（狀態列＋一句定位）→ §1 工作經歷 → §2 個人系統（4 個 case study：
-Hermes / Stock Monitor / ESP32 / Fusion Panel）→ §3 其他運行中專案 →
-§4 技能 → 聯絡（email＋電話）。
+開啟 `http://127.0.0.1:8792/`。
 
-## 部署
+## 發布
 
-- **線上網址**：https://ktrnjack.github.io/
-- repo：`KTRNJack/KTRNJack.github.io`（GitHub Pages user site，push main 即自動部署）
-- 之後買自訂網域直接綁定，零重工。
+Repository：`git@github.com:KTRNJack/KTRNJack.github.io.git`
+
+推送 `main` 後由 GitHub Pages 發布。Repository visibility 與 Pages 啟用狀態需由擁有者決定。

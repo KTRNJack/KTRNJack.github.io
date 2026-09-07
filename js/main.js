@@ -1,90 +1,77 @@
-/* resume-site v2 — vanilla enhancements, zero dependencies */
 (function () {
-  'use strict';
+  "use strict";
 
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var progress = document.getElementById("readingProgress");
+  var year = document.getElementById("currentYear");
+  var printButton = document.getElementById("printResume");
+  var revealItems = document.querySelectorAll(".reveal");
+  var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
-  /* year */
-  var y = document.getElementById('year');
-  if (y) y.textContent = new Date().getFullYear();
-
-  /* career uptime: days since 2022-07 + live hh:mm:ss */
-  var up = document.getElementById('uptime');
-  if (up) {
-    var t0 = new Date('2022-07-01T09:00:00+08:00').getTime();
-    var pad = function (n) { return String(n).padStart(2, '0'); };
-    var tick = function () {
-      var s = Math.floor((Date.now() - t0) / 1000);
-      var d = Math.floor(s / 86400);
-      up.textContent = d + 'd ' + pad(Math.floor(s / 3600) % 24) + ':' + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60);
-    };
-    tick();
-    if (!reduced) setInterval(tick, 1000);
+  if (year) {
+    year.textContent = String(new Date().getFullYear());
   }
 
-  /* scroll progress bar */
-  var bar = document.getElementById('progressBar');
-  if (bar) {
-    var onScroll = function () {
-      var h = document.documentElement;
-      var max = h.scrollHeight - h.clientHeight;
-      bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
-    };
-    document.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
-
-  /* reveal on scroll */
-  var items = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && !reduced) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) {
-          en.target.classList.add('in');
-          io.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
-    items.forEach(function (el) { io.observe(el); });
-  } else {
-    items.forEach(function (el) { el.classList.add('in'); });
-  }
-
-  /* custom cursor (fine pointers only) */
-  var fine = window.matchMedia('(pointer: fine)').matches;
-  var dot = document.getElementById('curDot');
-  var ring = document.getElementById('curRing');
-  if (fine && !reduced && dot && ring) {
-    var mx = -100, my = -100, rx = -100, ry = -100;
-    document.addEventListener('pointermove', function (e) { mx = e.clientX; my = e.clientY; }, { passive: true });
-    (function loop() {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      dot.style.transform = 'translate(' + (mx - 3) + 'px,' + (my - 3) + 'px)';
-      ring.style.transform = 'translate(' + (rx - 17) + 'px,' + (ry - 17) + 'px)';
-      requestAnimationFrame(loop);
-    })();
-    document.querySelectorAll('a, .cs, .etc li').forEach(function (el) {
-      el.addEventListener('pointerenter', function () { document.body.classList.add('cur-hover'); });
-      el.addEventListener('pointerleave', function () { document.body.classList.remove('cur-hover'); });
+  if (printButton) {
+    printButton.addEventListener("click", function () {
+      window.print();
     });
   }
 
-  /* card tilt + hover glow position */
-  if (fine && !reduced) {
-    document.querySelectorAll('.tilt').forEach(function (card) {
-      card.addEventListener('pointermove', function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width;
-        var py = (e.clientY - r.top) / r.height;
-        card.style.setProperty('--mx', (px * 100) + '%');
-        card.style.setProperty('--my', (py * 100) + '%');
-        card.style.transform =
-          'perspective(1100px) rotateX(' + ((0.5 - py) * 2.4) + 'deg) rotateY(' + ((px - 0.5) * 2.4) + 'deg)';
+  function updateProgress() {
+    if (!progress) return;
+    var root = document.documentElement;
+    var available = root.scrollHeight - root.clientHeight;
+    var ratio = available > 0 ? root.scrollTop / available : 0;
+    progress.style.width = String(Math.min(100, Math.max(0, ratio * 100))) + "%";
+  }
+
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress, { passive: true });
+
+  if (reducedMotion || !("IntersectionObserver" in window)) {
+    revealItems.forEach(function (item) {
+      item.classList.add("is-visible");
+    });
+  } else {
+    var revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
-      card.addEventListener('pointerleave', function () {
-        card.style.transform = '';
+    }, {
+      threshold: 0.08,
+      rootMargin: "0px 0px -8% 0px"
+    });
+
+    revealItems.forEach(function (item) {
+      revealObserver.observe(item);
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var sections = Array.from(navLinks)
+      .map(function (link) { return document.querySelector(link.getAttribute("href")); })
+      .filter(Boolean);
+
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        navLinks.forEach(function (link) {
+          var active = link.getAttribute("href") === "#" + entry.target.id;
+          if (active) link.setAttribute("aria-current", "true");
+          else link.removeAttribute("aria-current");
+        });
       });
+    }, {
+      rootMargin: "-25% 0px -65% 0px",
+      threshold: 0
+    });
+
+    sections.forEach(function (section) {
+      sectionObserver.observe(section);
     });
   }
 })();
