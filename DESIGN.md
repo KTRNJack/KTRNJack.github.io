@@ -1,89 +1,80 @@
-# Design System: Career Migration Map
+# Design System: Reviewable Delivery
 
 ## Overview
 
-**Creative North Star: "The Migration Map"**
+**Creative North Star: "Reviewable Delivery"**
 
-頁面像一張攤在工作桌上的工程遷移藍圖：大片鈷藍是主結構，暖紙色承載長文，安全橘只標出轉折與關鍵結果。它不是終端機，也不是雜誌，而是一份有方向、有版本、有證據的工程履歷。
+頁面把 Jack 的工作方式做成一套看得見的交付系統。深色首屏代表工程判斷，酸性綠標示可驗收結果，藍色負責技術遷移，橘色標示 AI 協作區。重點不是營造神祕的 AI 氣氛，而是讓招募者看見一條可追蹤的責任鏈。
 
-**Physical scene:** 招聘主管在白天的辦公桌前，用 14 吋筆電快速檢查一位資深工程候選人的履歷；環境光充足，必須先看到方向，再看到細節。因此採高可讀亮色頁面，不使用暗色控制室風格。
+**Physical scene:** 前端主管在白天用筆電快速查看資深前端候選人。首屏要在十秒內說清楚核心專長，接著能用一個互動流程理解 Jack 如何和 AI 工作，再看到實際遷移證據與能力邊界。
 
-**Brand voice:** precise, sturdy, awake.
+**Brand voice:** mechanical, candid, kinetic.
 
-**Color strategy:** Committed。鈷藍承擔約 35% 到 45% 的視覺面積，暖紙色負責閱讀，安全橘低於 10% 且只標示重要節點。
+**Distinctiveness:** 深墨色、酸性綠與實心藍橘色塊形成高辨識度；大型中文標題、版本遷移圖與責任分工表是主要視覺語言。
 
 ## Colors
 
-- **Blueprint Cobalt:** `oklch(45% 0.18 257)`，Hero、導覽、主要區塊與連結。
-- **Deep Cobalt:** `oklch(27% 0.11 260)`，深色文字與 hover 狀態。
-- **Warm Paper:** `oklch(96% 0.018 88)`，主要閱讀背景。
-- **Draft Paper:** `oklch(91% 0.026 83)`，次要區帶與分隔。
-- **Graphite Ink:** `oklch(22% 0.035 258)`，正文。
-- **Muted Ink:** `oklch(48% 0.032 258)`，metadata 與輔助說明。
-- **Safety Orange:** `oklch(68% 0.19 44)`，關鍵節點與 focus ring。
-- **Signal Mint:** `oklch(82% 0.10 154)`，已驗證狀態。
+- **Deep Ink:** `oklch(19% 0.025 264)`，首屏、AI 方法與頁尾。
+- **Warm Paper:** `oklch(96.5% 0.018 92)`，主要閱讀背景。
+- **Draft Paper:** `oklch(91% 0.03 94)`，能力邊界區。
+- **Signal Acid:** `oklch(88% 0.22 126)`，主行動、驗收訊號與誠實宣言。
+- **Migration Blue:** `oklch(57% 0.23 267)`，前端遷移與關鍵索引。
+- **Collaboration Orange:** `oklch(71% 0.19 48)`，AI 協作案例。
 
-不使用純黑或純白。所有中性色都向鈷藍或紙張暖色偏移。
+色彩使用實心區塊，不使用 gradient text、玻璃卡片或發光效果。
 
 ## Typography
 
-- **Primary:** `Chiron Hei HK`，fallback 為 `PingFang TC`, `Noto Sans TC`, system-ui, sans-serif。選擇原因是繁體中文畫面現代、字重完整，適合長文與高密度履歷。
-- **Technical labels:** `Azeret Mono`，只用於日期、章節編號、技術標籤與短 metadata。
-- H1 使用 `clamp(3.2rem, 9vw, 7.6rem)`，重量 800，行高 0.95。
-- H2 使用 `clamp(2rem, 5vw, 4.6rem)`，重量 750，行高 1.05。
-- 正文 1rem 到 1.08rem，行高 1.75，最大行長 72ch。
-- 不使用 display serif、斜體大標或 gradient text。
+- **Primary:** `Chiron Hei HK`，用於所有繁體中文標題與正文。
+- **Technical labels:** `Azeret Mono`，只用於英文流程、版本、日期與技術標籤。
+- H1 使用 `clamp(4rem, 8vw, 8rem)`，字重 800，行高 0.9。
+- H2 使用 `clamp(2.8rem, 6.8vw, 6.3rem)`，字重 800，行高 0.96。
+- 正文最大行長約 65 到 70 個字元，保持高密度履歷仍可閱讀。
 
 ## Layout
 
-- 桌面使用 12 欄可見格線，最大寬度 1180px；重要區塊採 4 欄 metadata 加 8 欄內容。
-- Hero 不置中，名稱與定位靠左，右側以遷移路徑展示技術跨度。
-- 經歷以時間軸和寬版內容列呈現，不使用獨立卡片堆疊。
-- 個人專案使用交錯的色帶與編號，每一項只有最必要的技術與驗證狀態。
-- 手機降為單欄，metadata 先於內容，導覽改為可水平捲動的錨點列。
+- 最大內容寬度 1240px，桌面以 12 欄思考，手機降為單欄。
+- Hero 左側是定位與三項證據，右側是可操作的 AI 交付流程。
+- Nuxt 版本遷移以大型 `02 → 03` 視覺呈現，不做一般 before／after 卡片。
+- 經歷與個人實驗使用全寬列，避免重複卡片網格。
+- 能力邊界以 A／B／C 三層呈現，層級名稱比技術清單更醒目。
 
 ## Components
 
-### Navigation
+### AI workflow
 
-- Sticky 細導覽，紙色背景加 1px 鈷藍邊線。
-- 顯示姓名縮寫、四個區段錨點與 Email 行動。
-- Focus 使用 2px Safety Orange outline。
+- 四個按鈕對應 Define、Direct、Review、Verify。
+- 點擊後更新目前階段與具體行為，使用 `aria-live` 讓輔助技術取得變更。
+- 這是首屏唯一的主要互動，用來說明責任流程。
 
-### Hero
+### Migration visual
 
-- 鈷藍滿寬色帶，暖紙文字，大型姓名與一句定位。
-- 右側 migration path 以線與節點表達 `Frontend → Platform → AI Tooling`。
-- 不使用頭像、英雄數字或能力百分比。
+- 左側深色代表 Nuxt 2／Vue 2，右側藍色代表 Nuxt 3／Vue 3。
+- 中央酸性綠箭頭標示「保留行為、逐步替換」。
+- 技術名稱只作為遷移證據，後面接續 Jack 實際負責的三類決策。
 
-### Experience row
+### Responsibility map
 
-- 左側顯示日期、公司、職稱；右側放 3 到 6 條成果。
-- 關鍵技術以 inline chips 呈現，chip 不使用膠囊造型。
-- 公司經歷與個人專案之間以不同背景與章節標題分開。
+- 「我負責」與「AI 協助」以不同訊號色分開。
+- 最後一列明確指出合併、行為與風險責任仍由 Jack 承擔。
+- Core API 案例直接說明後端深度邊界，不暗示資深後端能力。
 
-### Project strip
+### Capability levels
 
-- 每個專案是一個完整寬度區帶，有名稱、用途、兩條成果與驗證狀態。
-- 先以 Windows／WSL AI 系統與 Mac 工程工具分組，再於組內維持一致的證據格式。
-- 已驗證狀態同時使用文字與 Signal Mint 圓點，不只依賴顏色。
-- 不使用重複卡片網格。
-
-### Contact
-
-- Email 是唯一公開聯絡方式。
-- 使用大型純文字連結與清楚的 hover／focus 回饋，不顯示電話與住址。
+- A：可獨立交付，包含前端框架、語言、介面與測試。
+- B：具工作知識，代表可讀、可串接、可除錯。
+- C：AI 協作接觸，代表有專案經驗但不是獨立核心熟練。
 
 ## Motion
 
-- 首屏只有一次 500ms 到 800ms 的 opacity／transform choreography。
-- 捲動 reveal 使用 `cubic-bezier(0.16, 1, 0.3, 1)`，每個元素只執行一次。
-- 不做 3D tilt、自訂游標、無限跑馬燈或持續旋轉背景。
-- `prefers-reduced-motion: reduce` 時完全停用 reveal、smooth scroll 與進度動畫。
+- 區塊進場只有一次 opacity／translate 動畫。
+- 按鈕以短距離位移和實心色彩回饋，不使用 3D、漂浮或持續動畫。
+- `prefers-reduced-motion: reduce` 時關閉 smooth scroll 與 reveal。
 
 ## Content Rules
 
-- 純繁體中文，專有名詞保留英文。
-- 不使用 em dash，改用冒號、句號或括號。
-- 不寫空泛自評；每個重要敘述必須有 repository、文件、測試或本人確認作為來源。
-- 對外不顯示 Git commit 數，commit 僅用於內部判斷責任範圍。
+- 純繁體中文，必要技術詞保留英文。
+- 先說責任與判斷，再列工具名稱。
+- 工作成果、AI 協作案例與個人實驗清楚分區。
+- 不以 AI 產生的程式碼作為獨立熟練證據。
+- 不顯示 Git commit 數，也不宣稱未直接驗證的商業成效。
