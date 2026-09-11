@@ -4,13 +4,13 @@
 
 **Creative North Star: "Reviewable Delivery"**
 
-頁面把 Jack 的工作方式做成一套看得見的交付系統。深色首屏代表工程判斷，酸性綠標示可驗收結果，藍色負責技術遷移，橘色標示 AI 協作區。重點不是營造神祕的 AI 氣氛，而是讓招募者看見一條可追蹤的責任鏈。
+頁面以編輯式技術履歷呈現 Jack 的前端現代化能力。深色首屏代表工程判斷，酸性綠標示可驗收結果，藍色負責技術遷移，橘色只用於焦點與少量狀態。AI 是可驗證的工作方法，不是視覺主角。
 
-**Physical scene:** 前端主管在白天用筆電快速查看資深前端候選人。首屏要在十秒內說清楚核心專長，接著能用一個互動流程理解 Jack 如何和 AI 工作，再看到實際遷移證據與能力邊界。
+**Physical scene:** 前端主管在白天用筆電快速查看資深前端候選人。首屏要在十秒內說清楚年資、核心專長與代表作，再沿著遷移、經歷、AI 方法與能力邊界確認可信度。
 
 **Brand voice:** mechanical, candid, kinetic.
 
-**Distinctiveness:** 深墨色、酸性綠與實心藍橘色塊形成高辨識度；大型中文標題、版本遷移圖與責任分工表是主要視覺語言。
+**Distinctiveness:** 深墨色、酸性綠與實心藍色塊形成高辨識度；大型中文標題與 `02 → 03` 版本遷移圖是主要視覺語言。
 
 ## Colors
 
@@ -19,7 +19,7 @@
 - **Draft Paper:** `oklch(91% 0.03 94)`，能力邊界區。
 - **Signal Acid:** `oklch(88% 0.22 126)`，主行動、驗收訊號與誠實宣言。
 - **Migration Blue:** `oklch(57% 0.23 267)`，前端遷移與關鍵索引。
-- **Collaboration Orange:** `oklch(71% 0.19 48)`，AI 協作案例。
+- **Focus Orange:** `oklch(71% 0.19 48)`，鍵盤焦點與少量狀態。
 
 色彩使用實心區塊，不使用 gradient text、玻璃卡片或發光效果。
 
@@ -34,18 +34,19 @@
 ## Layout
 
 - 最大內容寬度 1240px，桌面以 12 欄思考，手機降為單欄。
-- Hero 左側是定位與三項證據，右側是可操作的 AI 交付流程。
+- Hero 左側是定位與放大的三項證據，右側只放低調的主案例摘要。
 - Nuxt 版本遷移以大型 `02 → 03` 視覺呈現，不做一般 before／after 卡片。
-- 經歷與個人實驗使用全寬列，避免重複卡片網格。
+- 敘事順序固定為遷移、工作經歷、AI 方法、能力邊界、side projects。
+- 經歷與個人實驗使用全寬列，side projects 壓縮為較短的證據帶。
 - 能力邊界以 A／B／C 三層呈現，層級名稱比技術清單更醒目。
 
 ## Components
 
 ### AI workflow
 
-- 四個按鈕對應 Define、Direct、Review、Verify。
-- 點擊後更新目前階段與具體行為，使用 `aria-live` 讓輔助技術取得變更。
-- 這是首屏唯一的主要互動，用來說明責任流程。
+- Define、Direct、Review、Verify 四步全部寫入靜態 HTML。
+- 流程位於工作經歷之後，和責任分工及 Core API 案例組成完整方法區。
+- JavaScript 不承載內容，停用後仍可讀到所有步驟。
 
 ### Migration visual
 
@@ -68,7 +69,7 @@
 ## Motion
 
 - 區塊進場只有一次 opacity／translate 動畫。
-- 按鈕以短距離位移和實心色彩回饋，不使用 3D、漂浮或持續動畫。
+- 連結以短距離位移和實心色彩回饋，不使用 3D、漂浮或持續動畫。
 - `prefers-reduced-motion: reduce` 時關閉 smooth scroll 與 reveal。
 
 ## Content Rules

@@ -27,7 +27,6 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
@@ -55,6 +54,7 @@ button {
 :focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 4px;
+  box-shadow: 0 0 0 6px var(--paper);
 }
 
 ::selection {
@@ -192,7 +192,7 @@ button {
   bottom: 0;
   width: min(23vw, 20rem);
   height: min(17vw, 13rem);
-  background: var(--orange);
+  background: var(--acid);
   clip-path: polygon(36% 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -204,7 +204,7 @@ button {
   gap: clamp(3rem, 7vw, 7.5rem);
   align-items: center;
   min-height: inherit;
-  padding-block: clamp(4.5rem, 9vw, 8rem);
+  padding-block: clamp(2.25rem, 3vw, 3rem);
 }
 
 .hero-copy {
@@ -216,7 +216,7 @@ button {
   display: flex;
   gap: 1rem;
   align-items: center;
-  margin: 0 0 2rem;
+  margin: 0 0 1.35rem;
   color: var(--acid);
   font-family: var(--mono);
   font-size: 0.68rem;
@@ -235,7 +235,7 @@ button {
 .hero h1 {
   max-width: 8.2ch;
   margin: 0;
-  font-size: clamp(4rem, 8vw, 8rem);
+  font-size: clamp(3.7rem, 7vw, 7rem);
   font-weight: 800;
   letter-spacing: -0.075em;
   line-height: 0.9;
@@ -249,7 +249,7 @@ button {
 
 .hero-lede {
   max-width: 62ch;
-  margin: 2.4rem 0 0;
+  margin: 1.5rem 0 0;
   color: color-mix(in oklch, var(--paper) 78%, transparent);
   font-size: clamp(1.02rem, 1.4vw, 1.17rem);
 }
@@ -258,7 +258,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 0.85rem;
-  margin-top: 2.3rem;
+  margin-top: 1.4rem;
 }
 
 .button {
@@ -297,7 +297,7 @@ button {
   grid-template-columns: repeat(3, 1fr);
   gap: 0;
   max-width: 46rem;
-  margin: 3.2rem 0 0;
+  margin: 1.8rem 0 0;
   padding: 0;
   border-top: 1px solid var(--line-light);
   list-style: none;
@@ -317,7 +317,9 @@ button {
 .hero-proof strong {
   color: var(--paper);
   font-family: var(--mono);
-  font-size: 0.82rem;
+  font-size: clamp(1.6rem, 2.3vw, 2.15rem);
+  letter-spacing: -0.06em;
+  line-height: 1.1;
 }
 
 .hero-proof span {
@@ -325,121 +327,83 @@ button {
   font-size: 0.78rem;
 }
 
-.workflow {
+.hero-case {
   position: relative;
   z-index: 2;
   align-self: center;
-  border: 1px solid color-mix(in oklch, var(--paper) 34%, transparent);
-  background: var(--ink-soft);
-  box-shadow: 1.2rem 1.2rem 0 var(--blue);
-}
-
-.workflow::before {
-  position: absolute;
-  top: -0.6rem;
-  right: 2.4rem;
-  width: 4.5rem;
-  height: 1.2rem;
-  background: var(--orange);
-  content: "";
-  transform: rotate(3deg);
-}
-
-.workflow-topline {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.1rem;
+  max-width: 27rem;
+  margin-left: auto;
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  border-top: 5px solid var(--acid);
   border-bottom: 1px solid var(--line-light);
-  color: var(--acid);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  background: color-mix(in oklch, var(--ink-soft) 82%, transparent);
 }
 
-.workflow-topline p {
-  margin: 0;
-}
-
-.workflow-topline span::before {
-  display: inline-block;
-  width: 0.48rem;
-  height: 0.48rem;
-  margin-right: 0.45rem;
-  border-radius: 50%;
-  background: var(--acid);
+.hero-case::before {
+  position: absolute;
+  top: -0.35rem;
+  right: 0;
+  width: 42%;
+  height: 0.35rem;
+  background: var(--blue);
   content: "";
 }
 
-.workflow-display {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.2rem;
-  align-items: start;
-  min-height: 13rem;
-  padding: clamp(1.6rem, 4vw, 2.8rem);
-}
-
-.workflow-display > span {
-  color: var(--blue);
-  font-family: var(--mono);
-  font-size: clamp(3rem, 7vw, 5.2rem);
-  font-weight: 600;
-  letter-spacing: -0.1em;
-  line-height: 0.9;
-}
-
-.workflow-display p {
-  margin: 0 0 0.7rem;
+.hero-case > p {
+  margin: 0 0 1.8rem;
   color: var(--acid);
-  font-size: clamp(1.35rem, 3vw, 2rem);
-  font-weight: 800;
-  line-height: 1.2;
+  font-family: var(--mono);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
 }
 
-.workflow-display strong {
+.hero-case > strong {
   display: block;
-  max-width: 19rem;
-  color: color-mix(in oklch, var(--paper) 70%, transparent);
-  font-size: 0.96rem;
-  font-weight: 500;
+  color: var(--paper);
+  font-family: var(--mono);
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 1.15;
 }
 
-.workflow-track {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+.hero-case > strong span {
+  color: var(--acid);
+}
+
+.hero-case dl {
+  margin: 2rem 0;
   border-top: 1px solid var(--line-light);
 }
 
-.workflow-step {
+.hero-case dl div {
   display: grid;
-  gap: 0.35rem;
-  min-width: 0;
-  padding: 0.9rem 0.55rem;
-  border: 0;
-  border-right: 1px solid var(--line-light);
-  background: transparent;
+  grid-template-columns: 4rem 1fr;
+  gap: 1rem;
+  padding-block: 0.75rem;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.hero-case dt {
   color: color-mix(in oklch, var(--paper) 45%, transparent);
-  cursor: pointer;
-  text-align: left;
-  transition: background 180ms ease, color 180ms ease;
-}
-
-.workflow-step:last-child {
-  border-right: 0;
-}
-
-.workflow-step span,
-.workflow-step strong {
   font-family: var(--mono);
-  font-size: 0.6rem;
+  font-size: 0.64rem;
 }
 
-.workflow-step.is-active,
-.workflow-step:hover {
-  background: var(--acid);
-  color: var(--ink);
+.hero-case dd {
+  margin: 0;
+  color: color-mix(in oklch, var(--paper) 80%, transparent);
+  font-size: 0.88rem;
+}
+
+.hero-case > a {
+  display: flex;
+  justify-content: space-between;
+  color: var(--paper);
+  font-size: 0.9rem;
+  font-weight: 800;
+  text-decoration: none;
 }
 
 .honesty-bar {
@@ -490,7 +454,7 @@ button {
   margin: 0;
   color: var(--blue);
   font-family: var(--mono);
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
   font-weight: 600;
   letter-spacing: -0.08em;
   line-height: 0.9;
@@ -711,6 +675,44 @@ button {
   color: var(--paper);
 }
 
+.workflow-static {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: clamp(4rem, 8vw, 6rem);
+  border-top: 1px solid var(--line-light);
+  border-bottom: 1px solid var(--line-light);
+}
+
+.workflow-static article {
+  min-width: 0;
+  padding: clamp(1.3rem, 3vw, 2rem);
+  border-right: 1px solid var(--line-light);
+}
+
+.workflow-static article:last-child {
+  border-right: 0;
+}
+
+.workflow-static span {
+  color: var(--acid);
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  font-weight: 600;
+}
+
+.workflow-static h3 {
+  margin: 1.1rem 0 0.7rem;
+  color: var(--paper);
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+
+.workflow-static p {
+  margin: 0;
+  color: color-mix(in oklch, var(--paper) 70%, transparent);
+  font-size: 0.88rem;
+}
+
 .responsibility-map {
   display: grid;
   grid-template-columns: minmax(8rem, 2fr) minmax(0, 10fr);
@@ -787,7 +789,8 @@ button {
   grid-template-columns: minmax(0, 6fr) minmax(0, 6fr);
   gap: clamp(2rem, 7vw, 7rem);
   padding: clamp(2rem, 5vw, 4.2rem);
-  background: var(--orange);
+  border-top: 5px solid var(--orange);
+  background: var(--paper);
   color: var(--ink);
 }
 
@@ -804,7 +807,7 @@ button {
 }
 
 .collab-case h3 span {
-  color: var(--paper);
+  color: var(--blue);
 }
 
 .collab-case-copy > p {
@@ -862,7 +865,7 @@ button {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: calc((100vw - min(1240px, calc(100vw - 3rem))) / -2);
+  left: -1rem;
   width: 0.45rem;
   background: var(--blue);
   content: "";
@@ -924,9 +927,9 @@ button {
 }
 
 .experiments {
-  padding-block: clamp(6rem, 12vw, 10rem);
-  background: var(--blue);
-  color: var(--paper);
+  padding-block: clamp(4.5rem, 8vw, 7rem);
+  background: var(--paper);
+  color: var(--ink);
 }
 
 .experiments-heading {
@@ -934,29 +937,30 @@ button {
   grid-template-columns: minmax(0, 8fr) minmax(17rem, 4fr);
   gap: clamp(2rem, 6vw, 6rem);
   align-items: end;
-  margin-bottom: clamp(3.5rem, 8vw, 6rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .experiments-heading .section-label {
   grid-column: 1 / -1;
   margin-bottom: -0.5rem;
-  color: var(--acid);
+  color: var(--blue);
 }
 
 .experiments-heading h2 {
-  color: var(--paper);
+  color: var(--ink);
+  font-size: clamp(2.15rem, 4.5vw, 4rem);
 }
 
 .experiments-heading > p:last-child {
   max-width: 34rem;
   margin: 0;
   padding-top: 1rem;
-  border-top: 2px solid var(--acid);
-  color: color-mix(in oklch, var(--paper) 80%, transparent);
+  border-top: 2px solid var(--blue);
+  color: var(--muted);
 }
 
 .experiment-list {
-  border-top: 2px solid var(--paper);
+  border-top: 2px solid var(--ink);
 }
 
 .experiment {
@@ -964,27 +968,28 @@ button {
   grid-template-columns: minmax(7rem, 2fr) minmax(12rem, 3fr) minmax(0, 5fr) minmax(11rem, 2fr);
   gap: clamp(1.3rem, 3vw, 3rem);
   align-items: start;
-  padding-block: clamp(1.8rem, 4vw, 3rem);
-  border-bottom: 1px solid color-mix(in oklch, var(--paper) 34%, transparent);
+  padding-block: clamp(1.2rem, 2.5vw, 1.8rem);
+  border-bottom: 1px solid var(--line);
 }
 
 .experiment > p:first-child {
-  color: var(--acid);
+  color: var(--blue);
 }
 
 .experiment h3 {
   margin: 0;
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
   line-height: 1.2;
 }
 
 .experiment > p:not(:first-child) {
   max-width: 54ch;
   margin: 0;
-  color: color-mix(in oklch, var(--paper) 82%, transparent);
+  color: var(--muted);
 }
 
 .experiment > span {
+  color: var(--ink-soft);
   font-family: var(--mono);
   font-size: 0.67rem;
   line-height: 1.6;
@@ -1212,15 +1217,16 @@ button {
 
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 4.5rem;
+    gap: 2.8rem;
   }
 
   .hero h1 {
     font-size: clamp(4rem, 14vw, 7rem);
   }
 
-  .workflow {
+  .hero-case {
     width: min(100% - 1rem, 38rem);
+    margin-left: 0;
   }
 
   .honesty-bar .shell,
@@ -1266,6 +1272,18 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .workflow-static {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .workflow-static article:nth-child(2) {
+    border-right: 0;
+  }
+
+  .workflow-static article:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line-light);
+  }
+
   .responsibility-label {
     grid-row: auto;
     border-right: 0;
@@ -1299,7 +1317,7 @@ button {
   }
 
   .hero-grid {
-    padding-block: 4rem 5rem;
+    padding-block: 2.4rem 4rem;
   }
 
   .hero-role {
@@ -1313,7 +1331,7 @@ button {
   }
 
   .hero h1 {
-    font-size: clamp(3.7rem, 18vw, 5.8rem);
+    font-size: clamp(3.2rem, 15vw, 4.6rem);
     line-height: 0.92;
   }
 
@@ -1336,35 +1354,29 @@ button {
     border-left: 0;
   }
 
-  .workflow {
-    width: calc(100% - 0.7rem);
-    box-shadow: 0.7rem 0.7rem 0 var(--blue);
+  .hero-case {
+    width: 100%;
   }
 
-  .workflow-display {
+  .workflow-static {
     grid-template-columns: 1fr;
-    min-height: 16rem;
   }
 
-  .workflow-display > span {
-    font-size: 3.3rem;
-  }
-
-  .workflow-track {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .workflow-step:nth-child(2) {
+  .workflow-static article {
     border-right: 0;
-  }
-
-  .workflow-step:nth-child(-n + 2) {
     border-bottom: 1px solid var(--line-light);
   }
 
-  .section-intro h2,
-  .experiments-heading h2 {
+  .workflow-static article:last-child {
+    border-bottom: 0;
+  }
+
+  .section-intro h2 {
     font-size: clamp(2.7rem, 13vw, 4.5rem);
+  }
+
+  .experiments-heading h2 {
+    font-size: clamp(2.15rem, 10vw, 3.2rem);
   }
 
   .method-heading h2 {
@@ -1479,7 +1491,7 @@ button {
   .site-header,
   .reading-progress,
   .hero-actions,
-  .workflow,
+  .hero-case,
   .site-footer {
     display: none !important;
   }

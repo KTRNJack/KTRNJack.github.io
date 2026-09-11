@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@500;600&amp;family=Chiron+Hei+HK:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=9">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%2317191f'/%3E%3Cpath d='M11 13h35v10H22v28H11z' fill='%23cefa33'/%3E%3Cpath d='M30 31h23v20H30z' fill='%235a76ff'/%3E%3C/svg%3E">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
@@ -42,8 +42,8 @@
       </a>
       <nav class="nav-links" aria-label="履歷導覽">
         <a href="#migration">前端遷移</a>
-        <a href="#method">AI 協作</a>
         <a href="#experience">經歷</a>
+        <a href="#method">AI 協作</a>
         <a href="#skills">能力邊界</a>
       </nav>
       <a class="header-contact" href="mailto:a0972120468@gmail.com">聊聊職缺 ↗</a>
@@ -61,7 +61,7 @@
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#migration">先看代表作 <span aria-hidden="true">↓</span></a>
-            <button class="button button-secondary" id="printResume" type="button">列印／存成 PDF</button>
+            <a class="button button-secondary" href="mailto:a0972120468@gmail.com">Email 聯絡 <span aria-hidden="true">↗</span></a>
           </div>
           <ul class="hero-proof" aria-label="履歷重點">
             <li><strong>8+ 年</strong><span>前端產品開發</span></li>
@@ -70,33 +70,16 @@
           </ul>
         </div>
 
-        <div class="workflow reveal" aria-labelledby="workflow-title">
-          <div class="workflow-topline">
-            <p id="workflow-title">HOW I SHIP WITH AI</p>
-            <span>LIVE METHOD</span>
-          </div>
-          <div class="workflow-display" aria-live="polite">
-            <span id="workflowNumber">01</span>
-            <div>
-              <p id="workflowStage">定義問題</p>
-              <strong id="workflowDetail">先釐清限制、相容邊界與可驗收的結果。</strong>
-            </div>
-          </div>
-          <div class="workflow-track" aria-label="AI 協作交付流程">
-            <button class="workflow-step is-active" type="button" aria-pressed="true" data-number="01" data-stage="定義問題" data-detail="先釐清限制、相容邊界與可驗收的結果。">
-              <span>01</span><strong>DEFINE</strong>
-            </button>
-            <button class="workflow-step" type="button" aria-pressed="false" data-number="02" data-stage="引導實作" data-detail="把工作切成小範圍，提供脈絡並限制 AI 可以改動的部分。">
-              <span>02</span><strong>DIRECT</strong>
-            </button>
-            <button class="workflow-step" type="button" aria-pressed="false" data-number="03" data-stage="審查產出" data-detail="逐段閱讀 diff、追查假設，修正看似合理但不符合系統的答案。">
-              <span>03</span><strong>REVIEW</strong>
-            </button>
-            <button class="workflow-step" type="button" aria-pressed="false" data-number="04" data-stage="完成驗收" data-detail="用測試、實機流程與既有行為比對，確認交付真的成立。">
-              <span>04</span><strong>VERIFY</strong>
-            </button>
-          </div>
-        </div>
+        <aside class="hero-case reveal" aria-label="主要代表作摘要">
+          <p>PRIMARY CASE / DATUN</p>
+          <strong>Nuxt 2 <span aria-hidden="true">→</span> Nuxt 3</strong>
+          <dl>
+            <div><dt>角色</dt><dd>主導前端遷移</dd></div>
+            <div><dt>核心</dt><dd>相容、重構、測試</dd></div>
+            <div><dt>原則</dt><dd>保留行為，逐步替換</dd></div>
+          </dl>
+          <a href="#migration">查看完整遷移證據 <span aria-hidden="true">↘</span></a>
+        </aside>
       </div>
     </section>
 
@@ -145,49 +128,10 @@
       </div>
     </section>
 
-    <section class="method" id="method" aria-labelledby="method-title">
-      <div class="shell">
-        <header class="method-heading reveal">
-          <p class="section-number">02</p>
-          <div>
-            <p class="section-label">AI-COLLABORATIVE DELIVERY</p>
-            <h2 id="method-title">AI 不是技能清單，<br>是我的工作方法。</h2>
-          </div>
-        </header>
-
-        <div class="responsibility-map reveal">
-          <div class="responsibility-label">責任怎麼分</div>
-          <div class="responsibility-row responsibility-me">
-            <p>我負責</p>
-            <ul><li>需求與限制</li><li>架構取捨</li><li>Code review</li><li>測試與驗收</li></ul>
-          </div>
-          <div class="responsibility-row responsibility-ai">
-            <p>AI 協助</p>
-            <ul><li>探索方案</li><li>產生初稿</li><li>重複性修改</li><li>補測試與文件</li></ul>
-          </div>
-          <p class="responsibility-result"><span>最後責任</span>仍然在我：程式能不能合併、行為對不對、風險能不能接受。</p>
-        </div>
-
-        <article class="collab-case reveal">
-          <div class="collab-case-heading">
-            <p>CASE / CORE API MODERNIZATION</p>
-            <h3>Node 10／Hapi／JavaScript<br><span>→</span> Node 24／Express／TypeScript／Prisma</h3>
-          </div>
-          <div class="collab-case-copy">
-            <p>這個後端遷移是我與 AI 協作完成的工作，不代表我擁有資深後端工程師的深度。我的價值在於能讀懂現有 contract、切分遷移範圍、審查輸入輸出，並用測試與前端實際串接確認結果。</p>
-            <dl>
-              <div><dt>能獨立判斷</dt><dd>API 對前端的影響、介面相容性、驗收條件與回歸風險</dd></div>
-              <div><dt>需要 AI 加速</dt><dd>Express／Prisma 實作細節、後端慣例與跨檔案樣板修改</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-    </section>
-
     <section class="experience" id="experience" aria-labelledby="experience-title">
       <div class="shell">
         <header class="section-intro compact reveal">
-          <p class="section-number">03</p>
+          <p class="section-number">02</p>
           <div>
             <p class="section-label">EXPERIENCE</p>
             <h2 id="experience-title">做過產品，<br>也接過舊系統。</h2>
@@ -232,33 +176,49 @@
       </div>
     </section>
 
-    <section class="experiments" aria-labelledby="experiments-title">
+    <section class="method" id="method" aria-labelledby="method-title">
       <div class="shell">
-        <header class="experiments-heading reveal">
-          <p class="section-label">AI COLLABORATION LAB</p>
-          <h2 id="experiments-title">我用 side projects<br>練習怎麼驗收 AI。</h2>
-          <p>這些作品證明的是跨領域拆解、審查與整合能力；其中的 Python、.NET、Win32 與原生 API 屬於 AI 協作接觸，並非我的核心熟練技術。</p>
+        <header class="method-heading reveal">
+          <p class="section-number">03</p>
+          <div>
+            <p class="section-label">AI-COLLABORATIVE DELIVERY</p>
+            <h2 id="method-title">AI 不是技能清單，<br>是我的工作方法。</h2>
+          </div>
         </header>
-        <div class="experiment-list">
-          <article class="experiment reveal">
-            <p>01 / REALTIME</p>
-            <h3>即時雙語字幕</h3>
-            <p>把 Windows／macOS 系統音訊送入即時翻譯流程，再以置頂字幕呈現；從裝置擷取到 UI 做端到端驗證。</p>
-            <span>AI 協作：Python · Swift · Gemini Live</span>
-          </article>
-          <article class="experiment reveal">
-            <p>02 / VISION</p>
-            <h3>Windows 視覺自動化</h3>
-            <p>以畫面狀態、目標視窗與動作預算限制自動操作，並用核心測試確認安全邊界。</p>
-            <span>AI 協作：.NET 8 · Win32 · OCR</span>
-          </article>
-          <article class="experiment reveal">
-            <p>03 / QA</p>
-            <h3>本機 UI 測試控制台</h3>
-            <p>用熟悉的 Nuxt 3 前端包裝 Playwright 測試流程，支援人工接手、失敗重試與敏感內容遮蔽。</p>
-            <span>核心＋協作：Nuxt 3 · Playwright · Vitest</span>
-          </article>
+
+        <div class="workflow-static reveal" aria-label="AI 協作交付流程">
+          <article><span>01 / DEFINE</span><h3>定義問題</h3><p>先釐清限制、相容邊界與可驗收的結果。</p></article>
+          <article><span>02 / DIRECT</span><h3>引導實作</h3><p>把工作切成小範圍，提供脈絡並限制 AI 可以改動的部分。</p></article>
+          <article><span>03 / REVIEW</span><h3>審查產出</h3><p>逐段閱讀 diff、追查假設，修正看似合理但不符合系統的答案。</p></article>
+          <article><span>04 / VERIFY</span><h3>完成驗收</h3><p>用測試、實機流程與既有行為比對，確認交付真的成立。</p></article>
         </div>
+
+        <div class="responsibility-map reveal">
+          <div class="responsibility-label">責任怎麼分</div>
+          <div class="responsibility-row responsibility-me">
+            <p>我負責</p>
+            <ul><li>需求與限制</li><li>架構取捨</li><li>Code review</li><li>測試與驗收</li></ul>
+          </div>
+          <div class="responsibility-row responsibility-ai">
+            <p>AI 協助</p>
+            <ul><li>探索方案</li><li>產生初稿</li><li>重複性修改</li><li>補測試與文件</li></ul>
+          </div>
+          <p class="responsibility-result"><span>最後責任</span>仍然在我：程式能不能合併、行為對不對、風險能不能接受。</p>
+        </div>
+
+        <article class="collab-case reveal">
+          <div class="collab-case-heading">
+            <p>CASE / CORE API MODERNIZATION</p>
+            <h3>Node 10／Hapi／JavaScript<br><span>→</span> Node 24／Express／TypeScript／Prisma</h3>
+          </div>
+          <div class="collab-case-copy">
+            <p>這個後端遷移是我與 AI 協作完成的工作，不代表我擁有資深後端工程師的深度。我的價值在於能讀懂現有 contract、切分遷移範圍、審查輸入輸出，並用測試與前端實際串接確認結果。</p>
+            <dl>
+              <div><dt>能獨立判斷</dt><dd>API 對前端的影響、介面相容性、驗收條件與回歸風險</dd></div>
+              <div><dt>需要 AI 加速</dt><dd>Express／Prisma 實作細節、後端慣例與跨檔案樣板修改</dd></div>
+            </dl>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -303,6 +263,36 @@
       </div>
     </section>
 
+    <section class="experiments" aria-labelledby="experiments-title">
+      <div class="shell">
+        <header class="experiments-heading reveal">
+          <p class="section-label">AI COLLABORATION LAB</p>
+          <h2 id="experiments-title">Side projects，<br>用來練習驗收 AI。</h2>
+          <p>這些作品證明的是跨領域拆解、審查與整合能力；其中的 Python、.NET、Win32 與原生 API 屬於 AI 協作接觸，並非我的核心熟練技術。</p>
+        </header>
+        <div class="experiment-list">
+          <article class="experiment reveal">
+            <p>01 / REALTIME</p>
+            <h3>即時雙語字幕</h3>
+            <p>系統音訊到置頂字幕的端到端驗證。</p>
+            <span>本人角色：定義流程、整合與驗收<br>AI 協作：Python · Swift · Gemini Live</span>
+          </article>
+          <article class="experiment reveal">
+            <p>02 / VISION</p>
+            <h3>Windows 視覺自動化</h3>
+            <p>以畫面狀態與動作預算限制自動操作。</p>
+            <span>本人角色：定義安全邊界與測試<br>AI 協作：.NET 8 · Win32 · OCR</span>
+          </article>
+          <article class="experiment reveal">
+            <p>03 / QA</p>
+            <h3>本機 UI 測試控制台</h3>
+            <p>支援人工接手、失敗重試與內容遮蔽。</p>
+            <span>本人角色：前端介面與流程驗收<br>核心＋協作：Nuxt 3 · Playwright · Vitest</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="contact" id="contact" aria-labelledby="contact-title">
       <div class="shell contact-inner reveal">
         <p>LET'S TALK</p>
@@ -319,6 +309,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=5" defer></script>
+  <script src="js/main.js?v=6" defer></script>
 </body>
 </html>

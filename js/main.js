@@ -4,37 +4,12 @@
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var progress = document.getElementById("readingProgress");
   var year = document.getElementById("currentYear");
-  var printButton = document.getElementById("printResume");
   var revealItems = document.querySelectorAll(".reveal");
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
-  var workflowSteps = document.querySelectorAll(".workflow-step");
-  var workflowNumber = document.getElementById("workflowNumber");
-  var workflowStage = document.getElementById("workflowStage");
-  var workflowDetail = document.getElementById("workflowDetail");
 
   if (year) {
     year.textContent = String(new Date().getFullYear());
   }
-
-  if (printButton) {
-    printButton.addEventListener("click", function () {
-      window.print();
-    });
-  }
-
-  workflowSteps.forEach(function (step) {
-    step.addEventListener("click", function () {
-      workflowSteps.forEach(function (item) {
-        var active = item === step;
-        item.classList.toggle("is-active", active);
-        item.setAttribute("aria-pressed", String(active));
-      });
-
-      if (workflowNumber) workflowNumber.textContent = step.dataset.number || "";
-      if (workflowStage) workflowStage.textContent = step.dataset.stage || "";
-      if (workflowDetail) workflowDetail.textContent = step.dataset.detail || "";
-    });
-  });
 
   function updateProgress() {
     if (!progress) return;
