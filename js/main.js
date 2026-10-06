@@ -6,6 +6,7 @@
   var year = document.getElementById("currentYear");
   var revealItems = document.querySelectorAll(".reveal");
   var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+  var collage = document.querySelector(".hero-collage");
 
   if (year) {
     year.textContent = String(new Date().getFullYear());
@@ -65,6 +66,21 @@
 
     sections.forEach(function (section) {
       sectionObserver.observe(section);
+    });
+  }
+
+  if (collage && !reducedMotion && window.matchMedia("(pointer: fine)").matches) {
+    collage.addEventListener("pointermove", function (event) {
+      var bounds = collage.getBoundingClientRect();
+      var x = (event.clientX - bounds.left) / bounds.width - 0.5;
+      var y = (event.clientY - bounds.top) / bounds.height - 0.5;
+      collage.style.setProperty("--pointer-x", x.toFixed(3));
+      collage.style.setProperty("--pointer-y", y.toFixed(3));
+    });
+
+    collage.addEventListener("pointerleave", function () {
+      collage.style.setProperty("--pointer-x", "0");
+      collage.style.setProperty("--pointer-y", "0");
     });
   }
 })();

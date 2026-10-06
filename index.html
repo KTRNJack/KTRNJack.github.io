@@ -14,8 +14,8 @@
   <link rel="canonical" href="https://ktrnjack.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Schibsted+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=11">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=JetBrains+Mono:wght@400;500&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Schibsted+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='6' fill='%230c0d0f'/%3E%3Crect x='6' y='6' width='52' height='52' rx='3' fill='none' stroke='%232e3133'/%3E%3Cpath d='M14 16h24v6H22v26h-8z' fill='%23e6e8ea'/%3E%3Crect x='34' y='34' width='16' height='14' fill='%2388a9c5'/%3E%3C/svg%3E">
   <script>document.documentElement.classList.add('js')</script>
   <script type="application/ld+json">
@@ -39,6 +39,7 @@
       <a class="brand" href="#top" aria-label="回到首頁">
         <span class="brand-mark" aria-hidden="true">JS</span>
         <span>Jack Sun</span>
+        <small>PORTFOLIO / 26</small>
       </a>
       <nav class="nav-links" aria-label="履歷導覽">
         <a href="#migration">前端遷移</a>
@@ -52,35 +53,48 @@
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="hero-grid shell">
+      <div class="hero-masthead shell reveal">
+        <p class="hero-role"><span>Senior Frontend Engineer</span><span>Taiwan · 2018 — NOW</span></p>
+        <h1 aria-label="Jack Sun"><span>JACK</span><span><em>SUN</em><i>前端工程師</i></span></h1>
+      </div>
+
+      <div class="hero-story shell">
         <div class="hero-copy reveal">
-          <p class="hero-role"><span>Senior Frontend Engineer</span><span>2015 — NOW</span></p>
-          <h1>前端做深，<br><em>AI</em> 用來<br>放大交付。</h1>
+          <p class="hero-kicker">我把舊前端帶到下一個版本，<br>也對 AI 協作的結果負責。</p>
           <p class="hero-lede">
-            我是 Jack，擁有 8 年以上 Web 開發經驗。能獨立主導前端重構與技術遷移；面對後端、跨平台與 AI 工具，我用 AI 加速實作，但親自定義需求、審查結果並完成驗收。
+            8 年以上 Web 開發經驗。能獨立主導前端重構與技術遷移；面對後端、跨平台與 AI 工具，我親自定義限制、審查差異並完成驗收。
           </p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#migration">先看代表作 <span aria-hidden="true">↓</span></a>
+            <a class="button button-primary" href="#migration">閱讀代表案例 <span aria-hidden="true">↘</span></a>
             <a class="button button-secondary" href="https://github.com/KTRNJack">GitHub <span aria-hidden="true">↗</span></a>
           </div>
-          <ul class="hero-proof" aria-label="履歷重點">
-            <li><strong>8+ 年</strong><span>前端產品開發</span></li>
-            <li><strong>Nuxt 2 → 3</strong><span>主導框架遷移</span></li>
-            <li><strong>Review first</strong><span>AI 產出必須驗證</span></li>
-          </ul>
         </div>
 
-        <aside class="hero-case reveal" aria-label="主要代表作摘要">
-          <p>PRIMARY CASE / DATUN</p>
-          <strong>Nuxt 2 <span aria-hidden="true">→</span> Nuxt 3</strong>
-          <dl>
-            <div><dt>角色</dt><dd>主導前端遷移</dd></div>
-            <div><dt>核心</dt><dd>相容、重構、測試</dd></div>
-            <div><dt>原則</dt><dd>保留行為，逐步替換</dd></div>
-          </dl>
-          <a href="#migration">查看完整遷移案例 <span aria-hidden="true">↘</span></a>
+        <aside class="hero-collage reveal" aria-label="主要代表作摘要">
+          <a class="case-sheet case-sheet-main" href="#migration">
+            <span class="case-sheet-index">CASE / 01</span>
+            <strong>FRONTEND<br>MODERNIZATION</strong>
+            <small>主導內容平台從 Nuxt 2／Vue 2 遷移至 Nuxt 3／Vue 3</small>
+            <i>VIEW CASE ↘</i>
+          </a>
+          <div class="case-sheet case-sheet-version" aria-hidden="true">
+            <span>FRAMEWORK</span>
+            <strong>02 <i>→</i> 03</strong>
+            <small>保留行為<br>逐步替換</small>
+          </div>
+          <div class="case-sheet case-sheet-proof">
+            <span>WORKING PRINCIPLE</span>
+            <strong>REVIEW<br>FIRST.</strong>
+            <small>AI 產出必須能被讀懂、測試與驗收。</small>
+          </div>
         </aside>
       </div>
+
+      <ul class="hero-proof shell reveal" aria-label="履歷重點">
+        <li><span>01</span><strong>8+ 年</strong><small>前端產品開發</small></li>
+        <li><span>02</span><strong>Nuxt 2 → 3</strong><small>主導框架遷移</small></li>
+        <li><span>03</span><strong>Review first</strong><small>AI 產出必須驗證</small></li>
+      </ul>
     </section>
 
     <section class="migration" id="migration" aria-labelledby="migration-title">
@@ -90,11 +104,11 @@
           <div>
             <p class="section-label">FRONTEND MODERNIZATION</p>
             <h2 id="migration-title">一個真正由我<br>主導的遷移。</h2>
-            <p class="section-lede">沃草 Datun 公開內容平台：從 Nuxt 2／Vue 2 走到 Nuxt 3／Vue 3。這不是展示新技術，而是在不中斷既有產品脈絡的前提下，重新建立可維護與可測試的前端基礎。</p>
+            <p class="section-lede">將既有內容平台從 Nuxt 2／Vue 2 帶到 Nuxt 3／Vue 3。這不是展示新技術，而是在不中斷產品脈絡的前提下，重新建立可維護與可測試的前端基礎。</p>
           </div>
         </header>
 
-        <div class="migration-visual reveal" role="img" aria-label="Datun 從 Nuxt 2 與 Vue 2 遷移至 Nuxt 3 與 Vue 3，並加入 Pinia、Firebase modular SDK、Vitest 與 Playwright">
+        <div class="migration-visual reveal" role="img" aria-label="既有內容平台從 Nuxt 2 與 Vue 2 遷移至 Nuxt 3 與 Vue 3，並加入 Pinia、Firebase modular SDK、Vitest 與 Playwright">
           <div class="migration-side migration-before">
             <span>LEGACY / NVM14</span>
             <strong>02</strong>
@@ -143,7 +157,7 @@
             <div class="role-time"><time datetime="2021-12-21">2021.12</time><span>NOW</span></div>
             <div class="role-company"><strong>沃草有限公司</strong><span>工程師</span></div>
             <div class="role-copy">
-              <p>公民科技內容平台、內部管理後台、會員與募款系統開發。主導 Datun 前端遷移；也以 AI 協作參與 Core API 現代化。</p>
+              <p>公民科技內容平台、內部管理後台、會員與募款系統開發。主導內容平台前端遷移，也以 AI 協作參與後端 API 現代化。</p>
               <ul><li>Vue / Nuxt</li><li>TypeScript</li><li>Testing</li><li>AI collaboration</li></ul>
             </div>
           </article>
@@ -208,7 +222,7 @@
 
         <article class="collab-case reveal">
           <div class="collab-case-heading">
-            <p>CASE / CORE API MODERNIZATION</p>
+            <p>CASE / BACKEND API MODERNIZATION</p>
             <h3>Node 10／Hapi／JavaScript<br><span>→</span> Node 24／Express／TypeScript／Prisma</h3>
           </div>
           <div class="collab-case-copy">
@@ -309,6 +323,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=6" defer></script>
+  <script src="js/main.js?v=7" defer></script>
 </body>
 </html>
